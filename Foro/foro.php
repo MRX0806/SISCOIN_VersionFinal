@@ -44,10 +44,12 @@
                     <a class="nav-link active" aria-current="page" href="../Filtrado/filtrado.php">FILTRADO</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../Mensajeria/mensajeria.php">FILTRADO</a>
+                    <a class="nav-link active" aria-current="page" href="../Mensajeria/mensajeria.php">MENSAJERIA</a>
                   </li>
                 </ul>
                 <form class="d-flex" role="search">
+                    <!--  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">  //POSIBLE SEARCH para algo deah
+                  <button class="btn btn-outline-success" type="submit">Search</button> -->
                 </form>
               </div>
             </div>
