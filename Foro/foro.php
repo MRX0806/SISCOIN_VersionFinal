@@ -32,24 +32,22 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../Perfil/perfil.php" style="color: white;">PERFIL</a>
+                    <a class="nav-link active" aria-current="page" href="../Perfil/perfil.php">PERFIL</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../Foro/foro.php" style="color: white;">FORO</a>
+                    <a class="nav-link active" aria-current="page" href="../Foro/foro.php">FORO</a>
                   </li>
                   <li class="nav-item ">
-                    <a class="nav-link  active " aria-current="page" href="../Repositorio/repositorio.php" style="color: white;" >REPOSITORIO</a>
+                    <a class="nav-link  active " aria-current="page" href="../Repositorio/repositorio.php" >REPOSITORIO</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../Filtrado/filtrado.php" style="color: white;">FILTRADO</a>
+                    <a class="nav-link active" aria-current="page" href="../Filtrado/filtrado.php">FILTRADO</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../Mensajeria/mensajeria.php" style="color: white;">FILTRADO</a>
+                    <a class="nav-link active" aria-current="page" href="../Mensajeria/mensajeria.php">FILTRADO</a>
                   </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <!--  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">  //POSIBLE SEARCH para algo deah
-                  <button class="btn btn-outline-success" type="submit">Search</button> -->
                 </form>
               </div>
             </div>
