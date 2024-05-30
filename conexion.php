@@ -6,6 +6,7 @@
     
     try{
         $pdo = new PDO("mysql:host:$SERVER;dbname=$BD", $USUARIO, $PASS);
+        echo "fue todo un exito";
     }catch(PDOException $e){
         echo "Error en la base datos " . $e->getMessage();
     }
