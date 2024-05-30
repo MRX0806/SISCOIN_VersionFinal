@@ -1,6 +1,3 @@
-<?php
-    $nombre_usuario = "Usuario";
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,28 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foro</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../header_Nav/Header.css">
 </head>
 <body>
-    <header>
-        <div class="header-degradado">
-            <div class="center">
-                <h1>SISCOIN</h1>
-                <h3>Sistema Colaborativo para la Investigación</h3>
-            </div>
-            <div class="btn">
-                <input type="submit" value="Registrarse" class="estilo-btn re">
-                <input type="submit" value="Iniciar Sesion" class="estilo-btn ini">
-            </div>
-        </div>
-    </header>
-     <!-- <nav>
-        <ul>
-            <li><a href="perfil.html">Perfil</a></li>
-            <li><a href="foro.html">Foro</a></li>
-            <li><a href="repositorio.html">Repositorio</a></li>
-            <li><a href="mensajeria.html">Mensajeria</a></li>
-        </ul>
-    </nav>  -->
+    <?php
+      include '../header_Nav/Header.php';
+    ?>
     <article>
         <section class="relleno">
             <div class="contenido">

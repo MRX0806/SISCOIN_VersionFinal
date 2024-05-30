@@ -1,5 +1,5 @@
 <?php
-    include 'conexion.php';
+    include '../conexion.php';
     try{
         $sql = "SELECT nombre FROM tema";
         $result = $pdo->query($sql);

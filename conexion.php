@@ -1,14 +1,14 @@
 <?php
     $SERVER = "localhost";
-    $USUARIO = "root";
+    $BDNAME = "bdsiscoin";
+    $USUARIO = "root"; 
     $PASS = "";
-    $BD = "bdsiscoin";
-    
-    try{
-        $pdo = new PDO("mysql:host:$SERVER;dbname=$BD", $USUARIO, $PASS);
-        echo "todo bien";
-    }catch(PDOException $e){
-        echo "Error en la base datos " . $e->getMessage();
+
+    try {
+        $pdo = new PDO("mysql:host=$SERVER;dbname=$BDNAME", $USUARIO, $PASS);
+        // Set the PDO error mode to exception
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        echo "No se pudo acceder a la BD: " . $e->getMessage(); //me indica el error que capturo en caso de que el try no funcione
     }
-    // PRUEBA
-    
+

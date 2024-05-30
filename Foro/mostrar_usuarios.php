@@ -1,5 +1,5 @@
 <?php
-    include 'conexion.php';
+    include '../conexion.php';
     try {
         $sql = "SELECT CONCAT(nombre, ' ', apellido) AS nombre_completo FROM estudiante";
         $result = $pdo->query($sql);
@@ -15,4 +15,3 @@
     } catch (PDOException $e) {
         echo "Error al mostrar los datos " . $e->getMessage();
     }
-?>
