@@ -1,5 +1,7 @@
 <?php
-    $nombre_usuario = "Usuario";
+    session_start();
+    $nombre_usuario = isset($_SESSION['nombre_usuario']) ? $_SESSION['nombre_usuario'] : null;
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +19,10 @@
                     <h3>Sistema Colaborativo para la Investigación</h3>
                 </div>
                 <div class="usuario">
-                    <h3>Hola <?php echo $nombre_usuario; ?></h3>
-                    <img src="../img/Usuario_blanco.png" alt="">
+                    <?php if ($nombre_usuario): ?>
+                        <h3>Hola <?php echo $nombre_usuario; ?></h3>
+                        <img src="../img/Usuario_blanco.png" alt="">
+                    <?php endif; ?>
                 </div>
             </div>
         </header>

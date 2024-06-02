@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foro</title>
+    <title>index</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="../header_Nav/Header.css">
 </head>
 <body>
-    <?php
-      include '../header_Nav/Header.php';
-    ?>
+    <header>
+        <?php
+            session_start();
+            include '../header_Nav/Header.php';
+        ?>
+        <div class="btn">
+            <?php if (!isset($_SESSION['nombre_usuario'])): ?>
+                <input type="submit" value="Registrarse" class="estilo-btn re">
+                <input type="submit" value="Iniciar Sesion" class="estilo-btn ini">
+            <?php endif; ?>
+        </div>
+    </header>
     <article>
         <section class="relleno">
             <div class="contenido">
