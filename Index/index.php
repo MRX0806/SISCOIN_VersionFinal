@@ -9,15 +9,15 @@
 </head>
 <body>
     <header>
-        <?php
-            session_start();
-            include '../header_Nav/Header.php';
-        ?>
-        <div class="btn">
-            <?php if (!isset($_SESSION['nombre_usuario'])): ?>
+        <div class="header-degradado">
+            <div class="center">
+                <h1>SISCOIN</h1>
+                <h3>Sistema Colaborativo para la Investigación</h3>
+            </div>
+            <div class="btn">
                 <input type="submit" value="Registrarse" class="estilo-btn re">
                 <input type="submit" value="Iniciar Sesion" class="estilo-btn ini">
-            <?php endif; ?>
+            </div>
         </div>
     </header>
     <article>

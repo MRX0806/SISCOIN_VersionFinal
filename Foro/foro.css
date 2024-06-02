@@ -43,7 +43,8 @@ h4 {
 button {
     position: absolute;
     top: 68%;
-    background-color: #ffffff;
+    color: white;
+    background-color: #f44336;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     border: 0;
     width: 68.1%;
