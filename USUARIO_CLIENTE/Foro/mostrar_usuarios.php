@@ -1,5 +1,5 @@
 <?php
-    include '../conexion.php';
+    include '../../conexion.php';
     try {
         $sql = "SELECT CONCAT(nombre, ' ', apellido) AS nombre_completo FROM estudiante";
         $result = $pdo->query($sql);

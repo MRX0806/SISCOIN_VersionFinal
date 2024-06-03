@@ -1,60 +1,73 @@
-section{
-    height: 100vh;
-    width: 80%;
-    background-color: #ffffff;
-    margin: 0 auto;
-    padding: 1%;
-    position: relative;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+/* Estilos generales del contenedor principal */
+main {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.container {
+    width: 100vh;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+}
+
+.participantes, .temas {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    height: auto; /* Allow height to adjust based on content */
+    cursor: pointer;
+    font-family: Sans-serif;
+    height: 60vh;
+}
+
+/* Ajustes específicos para secciones */
+.participantes {
+    grid-column: 1 / 2; /* Colocar en la primera columna */
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.temas {
+    grid-column: 2 / 3; /* Colocar en la segunda columna */
+}
+
 h4 {
     margin: 5px 0;
     color: #000000;
     text-align: center;
 }
-.participantes{
-    height: 95vh;
-    width: 25%;
-    background-color: #ffffff;
-    padding: 1px;
-    float: left;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: Sans-serif;
-}
-.temas{
-    height: 95vh;
-    width: 70%;
-    background-color: #ffffff;
-    padding: 1px;
-    margin-left: 20px;
-    float: left; /*ayuda a poner dos div juntos xd*/
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: Sans-serif;
-    z-index: -1;
-    text-align: left;
-}
 
-/*BOTON*/
-
+/* Botón */
 button {
-    position: absolute;
-    top: 68%;
-    color: white;
-    background-color: #f44336;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: black;
+    background-color: #ffffff;
     border: 0;
-    width: 68.1%;
-    height: 5%;
-    border-radius: 8px;
-    font-size: 18px;
-    font-family: 'Comic Sans MS';
-    
+    width: 25%;
+    height: 39px;
+    font-size: 14px;
+    box-shadow: 5px 1px #888888;
 }
-
+button:hover {
+    background-color:#f2f2f2;
+    font-weight: bold;
+}
 /* Estilos para la ventana emergente */
 .modal {
     display: none;
@@ -88,4 +101,97 @@ button {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.opciones_botones {
+    width: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+    padding: 20px;  
+}
+
+/* Media queries para pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 0; /* Remove padding to ensure full width */
+    }
+
+    .header-degradado {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px; /* Reduce padding for smaller screens */
+        width: 100%; /* Ensure full width */
+        box-sizing: border-box;
+    }
+
+    .usuario {
+        margin-top: 10px; /* Adjust spacing for the user section */
+        margin-right: 0; /* Reset margin */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    h3 {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+
+    .container {
+        width: 95%;
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .participantes, .temas {
+        width: 100%;
+        margin: 10px 0; /* Añadir margen entre los elementos */
+    }
+
+    .participantes {
+        grid-column: 1 / 2; /* Asegura que .participantes ocupe la primera fila */
+    }
+
+    .temas {
+        grid-column: 1 / 2; /* Asegura que .temas ocupe la segunda fila */
+    }
+
+    button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .modal-contenido {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h4 {
+        font-size: 16px;
+    }
+
+    .modal-contenido {
+        width: 95%;
+        padding: 10px;
+    }
+
+    button {
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .participantes, .temas {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .modal-contenido {
+        width: 90%; /* Adjust modal width for smaller screens */
+    }
 }
