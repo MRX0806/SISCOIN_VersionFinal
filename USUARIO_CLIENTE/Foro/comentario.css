@@ -4,8 +4,9 @@ body {
     margin: 20px;
 }
 
-h1 {
-    color: #333;
+h5 {
+    color: #000000;
+    font-size: 14px;
 }
 
 label {
@@ -25,4 +26,7 @@ input[type="submit"] {
     border: none;
     cursor: pointer;
     border-radius: 4px;
+}
+.contenedor_comen{
+    margin-top: 65%;
 }

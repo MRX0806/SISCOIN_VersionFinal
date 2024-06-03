@@ -29,22 +29,25 @@
                     ?>
                 </div>
                 <div class="temas">
-                    <h1>Comentarios</h1>
-                        <?php
-                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                // Procesar el comentario enviado
-                                if (isset($_POST['comentario'])) {
-                                    $comentario = $_POST['comentario'];
-                                    // Aquí puedes guardar el comentario en la base de datos, enviarlo por correo electrónico, etc.
-                                    echo "<p>¡Comentario enviado con éxito!</p>";
-                                }
+                    <h5>Comentarios</h5>
+                    <?php
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            // Procesar el comentario enviado
+                            if (isset($_POST['comentario'])) {
+                                $comentario = $_POST['comentario'];
+                                // Aquí puedes guardar el comentario en la base de datos, enviarlo por correo electrónico, etc.
+                                echo "<p>¡Comentario enviado con éxito!</p>";
                             }
-                        ?>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <label for="comentario">Escribe tu comentario:</label><br>
-                        <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea><br>
-                        <input type="submit" value="Enviar comentario">
-                    </form>
+                        }
+                    ?>
+                    <div class="contenedor_comen">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                            <label for="comentario">Escribe tu comentario:</label><br>
+                            <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea><br>
+                            <input type="submit" value="Enviar comentario">
+                        </form>
+                    </div>
+                    
                 </div>
                 
             </article>
