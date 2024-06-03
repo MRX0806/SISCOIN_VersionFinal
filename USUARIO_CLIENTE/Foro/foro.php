@@ -30,10 +30,15 @@
                 </div>
                 <div class="temas">
                     <h4>Temas en discusión</h4>
-                    <?php 
-                        include 'mostrar_temas.php';
-                    ?> 
-                
+                    <div class="tema">
+                        <a href="comentario.php">
+                            <div class="tema-contenido">
+                                <?php 
+                                    include 'mostrar_temas.php';
+                                ?>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </article>
         </section>

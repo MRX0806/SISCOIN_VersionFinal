@@ -47,6 +47,17 @@ main {
 .temas {
     grid-column: 2 / 3; /* Colocar en la segunda columna */
 }
+.tema {
+    background-color: #f2f2f2; /* Color plomo claro */
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.tema-contenido {
+    cursor: pointer; /* Cambia el cursor al pasar sobre el contenido */
+    text-decoration: none; /* Elimina el subrayado */
+    color: #000000; /* Cambia el color del texto */
+}
 
 h4 {
     margin: 5px 0;
