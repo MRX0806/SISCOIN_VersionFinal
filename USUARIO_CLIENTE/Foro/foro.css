@@ -33,7 +33,7 @@ main {
     height: auto; /* Allow height to adjust based on content */
     cursor: pointer;
     font-family: Sans-serif;
-    height: 60vh;
+    height: 44vh;
 }
 
 /* Ajustes específicos para secciones */
@@ -55,7 +55,7 @@ main {
 
 .tema-contenido {
     cursor: pointer; /* Cambia el cursor al pasar sobre el contenido */
-    text-decoration: none; /* Elimina el subrayado */
+    /*text-decoration: none; /* Elimina el subrayado */
     color: #000000; /* Cambia el color del texto */
 }
 
@@ -207,5 +207,7 @@ button:hover {
     }
 }
 a{
+    cursor: pointer;
     text-decoration: none;
+    padding: 10px;
 }
