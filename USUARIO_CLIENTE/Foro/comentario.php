@@ -58,7 +58,6 @@
                     <form action="foro.php">
                         <input type="submit" value="Regresar">
                     </form>
-                    
                 </div>
                 <div class="contenedor_comen">
                     <form action="procesar_comentario.php" method="post">

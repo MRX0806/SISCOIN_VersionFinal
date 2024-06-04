@@ -14,4 +14,5 @@ try {
 } catch (PDOException $e) {
     echo "Error al mostrar los temas " . $e->getMessage();
 }
+
 ?>
