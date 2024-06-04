@@ -42,7 +42,7 @@
                 <div class="comentarios">
                     <h5>Comentarios</h5>
                     <?php
-                        // Mostrar comentarios anteriores
+                        // aña
                         $sql_comentarios = "SELECT comment, fecha FROM Comentario WHERE tema_id = :tema_id ORDER BY fecha DESC";
                         $stmt_comentarios = $pdo->prepare($sql_comentarios);
                         $stmt_comentarios->bindParam(':tema_id', $tema_id, PDO::PARAM_INT);
