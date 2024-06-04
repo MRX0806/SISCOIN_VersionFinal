@@ -206,3 +206,6 @@ button:hover {
         width: 90%; /* Adjust modal width for smaller screens */
     }
 }
+a{
+    text-decoration: none;
+}

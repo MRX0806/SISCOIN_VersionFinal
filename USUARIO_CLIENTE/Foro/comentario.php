@@ -16,10 +16,8 @@
     <main>
         <section>
             <div class="opciones_botones">
-                <button >Agregar Tema</button>
-                <button>Buscar Tema</button>
-                <button>Modificar Tema</button>
-                <button>Eliminar Tema</button>
+                
+
             </div>
             <article class="container">
                 <div class="participantes">
