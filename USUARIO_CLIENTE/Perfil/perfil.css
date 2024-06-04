@@ -77,3 +77,27 @@ main {
     border-radius: 25%;
     margin-bottom: 10px;
 }
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .profile input {
+        padding: 6px;
+    }
+
+    .repository .buttons button, .forum .buttons button, .files .buttons button {
+        padding: 6px 10px;
+    }
+
+    .messages .user img {
+        width: 50%;
+    }
+}

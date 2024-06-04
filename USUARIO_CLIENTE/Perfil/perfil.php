@@ -43,4 +43,5 @@
             </div>
         </main>
     </body>
+    <script src="../Perfil/editar.js"></script>
 </html>

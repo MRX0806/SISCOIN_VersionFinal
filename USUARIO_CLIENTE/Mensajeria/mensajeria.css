@@ -1,0 +1,20 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.list-group-item.active {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.card-header, .card-footer {
+    background-color: #f8f9fa;
+}
