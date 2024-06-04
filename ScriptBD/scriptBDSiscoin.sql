@@ -58,7 +58,16 @@ CREATE TABLE Repositorio (
     estudiante_id INT NOT NULL,
     FOREIGN KEY (estudiante_id) REFERENCES Estudiante(estudiante_id) ON DELETE CASCADE
 );
+CREATE TABLE Grupo (
+    grupo_id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT
+);
 
+INSERT INTO Grupo (nombre, descripcion) VALUES 
+('Círculo de Estudio de Filosofía Política', 'Un grupo dedicado al estudio de las ideas políticas fundamentales y su aplicación en el mundo contemporáneo. Analizamos textos clásicos y debates actuales en filosofía política.'),
+('Grupo de Estudio de Psicología del Desarrollo', 'Un espacio para explorar los procesos de desarrollo humano desde la infancia hasta la adultez. Discutimos teorías, investigaciones y aplicaciones prácticas en el campo de la psicología del desarrollo.'),
+('Grupo de Estudio de Ingeniería de Software', 'Un equipo de estudiantes apasionados por la ingeniería de software y el desarrollo de aplicaciones. Nos reunimos para discutir conceptos de diseño, programación y metodologías ágiles.');
 
 /*INSERTAR DATOS EN LA BD*/
 -- Insertando datos en la tabla Usuario

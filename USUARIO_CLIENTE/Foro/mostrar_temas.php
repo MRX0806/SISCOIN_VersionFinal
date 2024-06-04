@@ -6,7 +6,7 @@ try {
     if ($result->rowCount() > 0) {
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             // Modifica cada tema para que sea clicleable y llame a la función mostrarComentarios() al hacer clic
-            echo "<p onclick='mostrarComentarios()'>" . htmlspecialchars($row['nombre']) . "</p>";
+            echo "<p onclick='mostrarComentarios()' style='text-decoration: none;'>" . htmlspecialchars($row['nombre']) . "</p>";
         }
     } else {
         echo "<p>No hay temas</p>";
