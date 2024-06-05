@@ -4,9 +4,9 @@ body {
     margin: 0;
     padding: 0;
 }
+
 /* Estilos generales del contenedor principal */
 main {
-    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     min-height: 100vh;
@@ -15,48 +15,9 @@ main {
     padding-top: 20px;
 }
 
-.container {
-    width: 100vh;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-gap: 20px;
-}
-
-.participantes, .temas {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #ffffff;
-    height: auto; /* Allow height to adjust based on content */
+a {
     cursor: pointer;
-    font-family: Sans-serif;
-    height: 44vh;
-}
-
-/* Ajustes específicos para secciones */
-.participantes {
-    grid-column: 1 / 2; /* Colocar en la primera columna */
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.temas {
-    grid-column: 2 / 3; /* Colocar en la segunda columna */
-}
-.tema {
-    background-color: #f2f2f2; /* Color plomo claro */
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.tema-contenido {
-    cursor: pointer; /* Cambia el cursor al pasar sobre el contenido */
-    /*text-decoration: none; /* Elimina el subrayado */
-    color: #000000; /* Cambia el color del texto */
+    text-decoration: none;
 }
 
 h4 {
@@ -75,43 +36,60 @@ button {
     font-size: 14px;
     box-shadow: 5px 1px #888888;
 }
+
 button:hover {
-    background-color:#f2f2f2;
+    background-color: #f2f2f2;
     font-weight: bold;
 }
-/* Estilos para la ventana emergente */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-}
 
-.modal-contenido {
-    background-color: #fefefe;
-    margin: 10% auto;
+.container {
+    width: 100vh;
+    background: #fff;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
 }
 
-.cerrar-modal {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+/* Ajustes específicos para secciones */
+.participantes {
+    grid-column: 1 / 2;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
 }
 
-.cerrar-modal:hover,
-.cerrar-modal:focus {
-    color: black;
-    text-decoration: none;
+.tema {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.tema-contenido {
     cursor: pointer;
+    color: #000000;
+    padding: 10px;
+}
+
+.tema-contenido:hover {
+    background-color: #f2f2f2;
+}
+
+.temas {
+    grid-column: 2 / 3;
+}
+
+.participantes,
+.temas {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    height: auto;
+    cursor: pointer;
+    font-family: Sans-serif;
+    height: 44vh;
 }
 
 .opciones_botones {
@@ -122,7 +100,47 @@ button:hover {
     background-color: #ffffff;
     position: relative;
     z-index: 1;
-    padding: 20px;  
+    padding: 20px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.close {
+    color: rgb(0, 0, 0);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* Media queries para pantallas más pequeñas */
@@ -130,84 +148,52 @@ button:hover {
     header {
         flex-direction: column;
         text-align: center;
-        padding: 0; /* Remove padding to ensure full width */
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 16px;
     }
 
     .header-degradado {
         flex-direction: column;
         text-align: center;
-        padding: 10px; /* Reduce padding for smaller screens */
-        width: 100%; /* Ensure full width */
+        padding: 10px;
+        width: 100%;
         box-sizing: border-box;
-    }
-
-    .usuario {
-        margin-top: 10px; /* Adjust spacing for the user section */
-        margin-right: 0; /* Reset margin */
-    }
-
-    h1 {
-        font-size: 24px; /* Adjust font size for smaller screens */
-    }
-
-    h3 {
-        font-size: 18px; /* Adjust font size for smaller screens */
     }
 
     .container {
         width: 95%;
-        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
-        padding: 10px; /* Adjust padding */
-    }
-
-    .participantes, .temas {
-        width: 100%;
-        margin: 10px 0; /* Añadir margen entre los elementos */
-    }
-
-    .participantes {
-        grid-column: 1 / 2; /* Asegura que .participantes ocupe la primera fila */
-    }
-
-    .temas {
-        grid-column: 1 / 2; /* Asegura que .temas ocupe la segunda fila */
-    }
-
-    button {
-        width: 100%;
-        font-size: 16px;
-    }
-
-    .modal-contenido {
-        width: 90%;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    h4 {
-        font-size: 16px;
-    }
-
-    .modal-contenido {
-        width: 95%;
+        grid-template-columns: 1fr;
         padding: 10px;
     }
 
-    button {
-        height: 50px;
-        font-size: 18px;
+    .participantes {
+        grid-column: 1 / 2;
     }
 
-    .participantes, .temas {
-        padding: 10px; /* Adjust padding for smaller screens */
+    .temas {
+        grid-column: 1 / 2;
     }
 
-    .modal-contenido {
-        width: 90%; /* Adjust modal width for smaller screens */
+    .participantes,
+    .temas {
+        width: 100%;
+        margin: 10px 0;
     }
-}
-a{
-    cursor: pointer;
-    text-decoration: none;
-    padding: 10px;
+
+    .usuario {
+        margin-top: 10px;
+        margin-right: 0;
+    }
 }
