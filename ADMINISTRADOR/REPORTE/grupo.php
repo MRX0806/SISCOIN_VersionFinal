@@ -1,5 +1,5 @@
 <?php
-    include '../conexion.php';
+    include '../../conexion.php';
     try {
         $sql = "SELECT CONCAT(nombre) AS grupo_nuevos FROM grupo";
         $result = $pdo->query($sql);

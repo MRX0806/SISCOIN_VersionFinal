@@ -1,5 +1,5 @@
 <?php
-include '../conexion.php';
+include '../../conexion.php';
 
 try {
     // Verificar que la conexión PDO esté establecida
