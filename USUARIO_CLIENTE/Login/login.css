@@ -27,7 +27,7 @@ main{
 /* Modificando el objeto contenedor__todo con las propiedades listadas*/
 .contenedor__todo{
     width: 100%;
-    max-width: 80px;
+    max-width: 10px;
     margin: auto;
     position: relative;
 }
