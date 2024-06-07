@@ -9,7 +9,7 @@
 }
 /* Modificando todos los elementos que esten dentro de la etiqueta body*/
 body{
-        background-image: url(../Imgs/fondoLogin.png);
+        background-image: url(../img/fondoLogin.png);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -34,7 +34,7 @@ main{
 /*Usamos la propiedad Justify-content para  centrar la caja donde se colocaran los objetos, y qde centrado*/
 .caja__trasera{
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 40px;
     display: flex;
     justify-content: center;
     backdrop-filter: blur(7px);
