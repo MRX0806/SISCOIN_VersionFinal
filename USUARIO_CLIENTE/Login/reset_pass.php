@@ -5,25 +5,32 @@ include '/xampp/htdocs/SISCOIN_ProyectoFinal/SISCOIN_ProyectoFinal/ConexionBD.ph
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener el correo electrónico del formulario
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $new_password = filter_input(INPUT_POST, 'new_password', FILTER_SANITIZE_STRING);
+
+    if (!$email || !$new_password) {
+        echo '<script>
+                alert("Por favor completa todos los campos.");
+                window.location="reset_password.php";
+              </script>';
+        exit();
+    }
 
     // Verificar si el correo electrónico existe en la base de datos
-    $query = "SELECT Password FROM usuarios WHERE Email = ?";
-    if ($stmt = mysqli_prepare($conn, $query)) {
-        mysqli_stmt_bind_param($stmt, "s", $email);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_store_result($stmt);
+    $query = "SELECT * FROM usuarios WHERE Email = ?";
+    if ($stmt = $conn->prepare($query)) {
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->store_result();
 
-        if (mysqli_stmt_num_rows($stmt) > 0) {
-            // Correo electrónico encontrado, permitir cambiar la contraseña
-            // Procesar el cambio de contraseña aquí
-            // Por ejemplo, actualizar el registro de usuario con la nueva contraseña
-            $new_password = filter_input(INPUT_POST, 'new_password', FILTER_SANITIZE_STRING);
+        if ($stmt->num_rows > 0) {
+            // Correo electrónico encontrado, proceder con el cambio de contraseña
+            $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
 
             // Preparar y ejecutar la consulta SQL para actualizar la contraseña
             $update_query = "UPDATE usuarios SET Password = ? WHERE Email = ?";
-            if ($update_stmt = mysqli_prepare($conn, $update_query)) {
-                mysqli_stmt_bind_param($update_stmt, "ss", $new_password, $email);
-                if (mysqli_stmt_execute($update_stmt)) {
+            if ($update_stmt = $conn->prepare($update_query)) {
+                $update_stmt->bind_param("ss", $hashed_password, $email);
+                if ($update_stmt->execute()) {
                     echo '<script>
                             alert("Contraseña actualizada exitosamente.");
                             window.location="login.php";
@@ -34,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             window.location="reset_password.php";
                           </script>';
                 }
-                mysqli_stmt_close($update_stmt);
+                $update_stmt->close();
             } else {
                 echo '<script>
                         alert("Error al preparar la consulta para actualizar la contraseña.");
@@ -49,13 +56,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </script>';
         }
 
-        mysqli_stmt_close($stmt);
+        $stmt->close();
     } else {
         echo '<script>
                 alert("Error al preparar la consulta para verificar el correo electrónico.");
                 window.location="reset_password.php";
               </script>';
     }
-
 }
+$conn->close();
 ?>

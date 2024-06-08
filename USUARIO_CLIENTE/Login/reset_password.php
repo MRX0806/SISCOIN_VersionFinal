@@ -19,5 +19,6 @@
             <button type="submit">Restablecer Contraseña</button>
         </form>
     </div>
+    <script src="validate_password.js"></script>
 </body>
 </html>
