@@ -74,7 +74,7 @@ body{
 }
 
 .remember-forgot label input{
-    accent-color: #fff;
+    accent-color: #000000;
     margin-right: 3px;
 }
 
@@ -92,7 +92,7 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
     font-size: 16px;
-    color:#333;
+    color: #000000;
     font-weight: 600
 }
 
