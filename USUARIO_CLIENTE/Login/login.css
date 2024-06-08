@@ -1,6 +1,4 @@
 /*Selecciona y modifica todos los elementos del Modelo Objeto del Documento*/
-/*aassssssssssssaaa*/
-/*aassssssssssssaaa*/
 *{
     margin: 0;
     padding: 0;
@@ -39,8 +37,8 @@ main{
     display: flex;
     justify-content: center;
     backdrop-filter: blur(7px);
-    background-color: rgba(19,45,70,0.9);
     border-radius: 20px;
+    background-color: rgba(19,45,70,0.9);
 }
 /* Modificando la caja que almacena los demas objetos*/
 .caja__trasera div{
@@ -142,31 +140,27 @@ main{
 /* Responsive Design*/
 
 @media screen and (max-width: 850px) {
-    main{
+    main {
         margin-top: 50px;
     }
-    /*Usamos la propiedad de flex direction para q no se sobreponga al modificar el tamaño de la pagina los objetos creados, y se colquen uno abajo de otro*/
-    .caja__trasera{
+
+    .caja__trasera {
         max-width: 350px;
         height: 300px;
         flex-direction: column;
         margin: auto;
     }
-    .caja__trasera div{
-        margin: 0px;
-        position: absolute;
-    }
 
-    /*Modificando Formularios*/
-
-    .contenedor__Login-Register{
-        top: -10px;
-        left: -5px;
+    .contenedor__Login-Register {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        max-width: 380px;
         margin: auto;
     }
 
-    /*Modificando la posición, para q se desplaze y no sea un punto fijo*/
-    .contenedor__Login-Register form{
+    .contenedor__Login-Register form {
         position: relative;
     }
 }
