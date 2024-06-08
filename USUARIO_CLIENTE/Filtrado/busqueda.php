@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include '../../conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $searchInput = $_POST['searchInput']; // Término de búsqueda
@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $habilidades = $_POST['habilidades']; // Habilidades
 
     try {
-        $conexion = new Conexion();
         $pdo = $conexion->getPdo();
 
         // Construir la consulta SQL para buscar y filtrar los resultados

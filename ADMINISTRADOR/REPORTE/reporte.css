@@ -1,0 +1,91 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Estilos generales del contenedor principal */
+main {
+    font-family: Arial, sans-serif;
+    /* display: flex; */
+    justify-content: center;
+    min-height: 100vh;
+    /* background-color: #ffffff; */
+    margin: 0;
+    padding-top: 20px;
+}
+.inte1{
+    display: flex;
+    align-items: center;
+    
+}
+.reporimt {
+    margin-right: 10px; /* Espacio entre la imagen y el título */
+}
+.reporimt img {
+    width: 50px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+}
+.titulo h1{
+    margin: 0;
+
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    max-width: 70%;
+    padding: 10px 308px; 
+    color: #ffffff;
+    font-size: 17px;
+    
+}
+.one{
+    grid-column: 1/4;
+    grid-row: 1;
+    /* border-radius: 20px; Imágenes redondeadas */
+    background-color: #f13747; /* Adjusted background color */
+    padding: 20px;
+    
+}
+.two{
+    grid-column: 1;
+    grid-row: 2;
+    background-color: #208acd;
+    border-radius: 20px; /* Imágenes redondeadas */
+    padding: 20px;
+}
+.three{
+    background-color: #FD9335;
+    grid-column: 2;
+    grid-row: 2 ;
+    border-radius: 20px;
+    padding: 20px;
+}
+.four{
+    background-color: #34ddbb;
+    grid-column: 1;
+    grid-row: 3;
+    border-radius: 20px;
+    padding: 20px;
+}
+.five{
+    background-color: #a5d467;
+    grid-column: 2;
+    grid-row: 3 ;
+    border-radius: 20px;
+    padding: 20px;
+}
+img{
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 170px;
+    
+
+}
+main div div p{
+    
+    font-weight: bold;
+}
