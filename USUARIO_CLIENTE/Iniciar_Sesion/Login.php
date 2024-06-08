@@ -10,9 +10,16 @@
 <body>
 
     <div class="wrapper">
-        <form action="">
+        <form action="Iniciar_Sesion.php" method="post">
             <h1>Login</h1>
-                <!---->
+            <!---->
+                <?php
+                if (isset($_GET['error_message'])) 
+                    {
+                        echo "<div class='error-message'>" . htmlspecialchars($_GET['error_message']) . "</div>";
+                    }
+                ?>
+            <!---->
                 <div class="input-box">
                     <input type="text"  placeholder="Ingrese su Nombre de Usuario" required>
                     <i class='bx bxs-user'></i>
