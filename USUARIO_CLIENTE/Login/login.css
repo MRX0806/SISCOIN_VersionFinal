@@ -35,7 +35,7 @@ main{
 /*Usamos la propiedad Justify-content para  centrar la caja donde se colocaran los objetos, y qde centrado*/
 .caja__trasera{
     width: 100%;
-    padding: 1px 20px;
+    padding: 1px ;
     display: flex;
     justify-content: center;
     backdrop-filter: blur(7px);
@@ -92,7 +92,7 @@ main{
 
 .contenedor__Login-Register form{
     width:  100%;
-    padding: 75px 20px;
+    padding: 50px 20px;
     background: #fff;
     position: absolute;
     border-radius: 20px;
