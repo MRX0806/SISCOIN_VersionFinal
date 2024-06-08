@@ -81,7 +81,7 @@ main{
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 380px;
+    max-width: 280px;
     position: relative;
     top: -185px;
     left: 10px;
