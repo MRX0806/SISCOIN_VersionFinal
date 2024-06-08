@@ -23,7 +23,7 @@ body{
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    color:#fff;
+    color:#000000;
     border-radius: 10px;
     padding: 30px 40px;
 }
@@ -68,13 +68,12 @@ body{
 .wrapper .remember-forgot{
     display: flex;
     justify-content: space-between;
-    color: #000000;
     font-size: 14.5px;
     margin: -15px 0 15px;
 }
 
 .remember-forgot label input{
-    accent-color: #000000;
+    accent-color: #fff;
     margin-right: 3px;
 }
 
