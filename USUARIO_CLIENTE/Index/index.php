@@ -15,8 +15,12 @@
                 <h3>Sistema Colaborativo para la Investigación</h3>
             </div>
             <div class="btn">
+                <a href="../Registrar_Sesion/Registrar.php">
                 <input type="submit" value="Registrarse" class="estilo-btn re">
+                </a>
+                <a href="../Iniciar_Sesion/Login.php">
                 <input type="submit" value="Iniciar Sesion" class="estilo-btn ini">
+                </a>
             </div>
         </div>
     </header>
