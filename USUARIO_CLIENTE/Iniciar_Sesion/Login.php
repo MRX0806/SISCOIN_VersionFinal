@@ -25,7 +25,7 @@
             </div>
             <!-- Enlace para la recuperación de contraseña -->
             <div class="remember-forgot">
-                <a href="#">Recuperar Acceso</a>
+                <a href="../Iniciar_Sesion/RecupararPass.php/Recuperar.php">Recuperar Acceso</a>
             </div>
             <!-- Botón de inicio de sesión -->
             <button type="submit" class="btn">Ingresar</button>

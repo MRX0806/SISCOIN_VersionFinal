@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('../Iniciar_Sesion/fondoLogin.png');
+    background-image: url('../Imgs/fondoLogin.png');
     background-size: cover;
     background-position: center;
 }
@@ -25,7 +25,7 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     color:#000000;
     border-radius: 10px;
-    padding: 30px 40px;
+    padding: 70px 40px;
 }
 
 .wrapper h1{
@@ -83,6 +83,7 @@ body{
 
 .wrapper .btn{
     width: 100%;
+    margin-top: 15px;
     height: 45px;
     background:#ffffff;
     border: none;

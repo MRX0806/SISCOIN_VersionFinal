@@ -10,11 +10,8 @@
 <body>
 
     <div class="wrapper">
-        <!-- Formulario de inicio de sesión que apunta a login.php -->
         <form action="Recuperar_Pass.php" method="post">
-            <h1>Recuperar Acceso</h1>
-            <!-- Mostrar el mensaje de error si existe -->
-            <!-- Campo para el nombre de usuario -->
+            <h1>Change Pass</h1>
             <div class="input-box">
                 <input type="text" name="username" placeholder="Ingrese su Nombre de Usuario" required>
                 <i class='bx bxs-user'></i>
@@ -27,8 +24,7 @@
             <button type="submit" class="btn">Recuperar Acceso</button>
             <!-- Enlace para registrarse -->
             <div class="register-link">
-                <p>Volver a la Pestaña Login</p>
-                <a href="../Login.php">Registrarse</a>
+                <a href="../Login.php">Volver a la Pestaña Login</a>
             </div>
         </form>
     </div>  
