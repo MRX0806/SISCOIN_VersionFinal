@@ -1,5 +1,5 @@
 <?php
-include '/xampp/htdocs/SISCOIN_ProyectoFinal/SISCOIN_ProyectoFinal/ConexionBD.php'; // Incluir archivo de conexión a la base de datos
+include '/xampp/htdocs/Proyectos_G/SISCOIN_VersionFinalPokemon/conexion.php'; // Incluye el archivo que contiene la función de conexión
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los datos del formulario

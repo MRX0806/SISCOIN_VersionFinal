@@ -1,5 +1,5 @@
 <?php
-include '/xampp/htdocs/SISCOIN_ProyectoFinal/SISCOIN_ProyectoFinal/ConexionBD.php'; // Incluye el archivo que contiene la función de conexión
+include '/xampp/htdocs/Proyectos_G/SISCOIN_VersionFinalPokemon/conexion.php'; // Incluye el archivo que contiene la función de conexión
 
 // Verifica si se ha enviado el formulario de inicio de sesión
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,10 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Puedes redirigir al usuario a otra página aquí si lo deseas
     } else {
-        // Error en las credenciales de inicio de sesión
-        // $error_message = "Usuario o contraseña incorrectos. Por favor, inténtenlo nuevamente.";
-        //header("Location: Login.php?error_message=" . urlencode($error_message));
-        //exit();
 
         echo '<script>
                 alert("Erro al Iniciar Sesion. Intentelo Nuevamente");

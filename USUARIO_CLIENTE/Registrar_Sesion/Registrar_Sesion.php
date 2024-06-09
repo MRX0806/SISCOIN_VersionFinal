@@ -1,6 +1,5 @@
 <?php
-include '/xampp/htdocs/SISCOIN_ProyectoFinal/SISCOIN_ProyectoFinal/ConexionBD.php'; // Incluir el archivo que contiene la función de conexión
-
+include '/xampp/htdocs/Proyectos_G/SISCOIN_VersionFinalPokemon/conexion.php'; // Incluye el archivo que contiene la función de conexión
 // Verificar si se ha enviado el formulario de registro
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener y sanitizar los datos del formulario

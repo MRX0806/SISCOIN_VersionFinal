@@ -11,10 +11,10 @@
 
     <div class="wrapper">
         <!-- Formulario de inicio de sesión que apunta a login.php -->
-        <form action="login.php" method="post">
+        <form action="Registrar_Sesion.php" method="post">
             <h1>Registro</h1>
             <div class="input-box">
-                <input type="text" name="Nombre Completo" placeholder="Ingrese su Nombre Completo" required>
+                <input type="text" name="Nombre_Completo" placeholder="Ingrese su Nombre Completo" required>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
