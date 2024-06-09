@@ -36,13 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Ejecutar la consulta preparada y verificar si se ejecutó correctamente
     if ($insert_stmt->execute()) {
-        $success_message = "Datos registrados exitosamente.";
-        header("Location: login.php?success_message=" . urlencode($success_message));
-        exit();
+        echo '<script>
+                alert("Registro de Usuario exitoso. Bienvenido");
+                window.location="Registrar.php";
+             </script>';
     } else {
-        $error_message = "Error al registrar los datos: " . $insert_stmt->error;
-        header("Location: Registrar.php?error_message=" . urlencode($error_message));
-        exit();
+        echo '<script>
+                alert("Erro al Registrar Usuario. Intentelo Nuevamente");
+                window.location="Registrar.php";
+            </script>';
     }
 
     // Cerrar la conexión y liberar los recursos

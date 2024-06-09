@@ -28,7 +28,9 @@
                 <a href="../Iniciar_Sesion/RecupararPass.php/Recuperar.php">Recuperar Acceso</a>
             </div>
             <!-- Botón de inicio de sesión -->
-            <button type="submit" class="btn">Ingresar</button>
+            <a href="../Index/index.php">
+                <button type="submit" class="btn">Ingresar</button>   
+            </a>
             <!-- Enlace para registrarse -->
             <div class="register-link">
                 <p>No tienes una cuenta?</p>
