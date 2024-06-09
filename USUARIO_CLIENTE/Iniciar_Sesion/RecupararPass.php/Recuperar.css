@@ -12,7 +12,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('../Registrar_Sesion/Imgs/fondoLogin.png');
+    background-image: url('../Iniciar_Sesion/fondoLogin.png');
     background-size: cover;
     background-position: center;
 }
