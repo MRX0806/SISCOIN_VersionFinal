@@ -39,7 +39,7 @@
                 </div>
                 <div class="input-group">
                     <label for="skillInput">Habilidad</label>
-                    <input class="caracter" type="text" id="skillInput" name="skillInput" placeholder="Ingrese habilidad">
+                    <input class="caracter" type="text" id="skillInput" name="skillInput" placeholder="Ingrese Habilidad">
                 </div>
                 <button type="submit">Aplicar Filtro</button>
             </form>
