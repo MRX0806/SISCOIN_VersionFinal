@@ -25,7 +25,7 @@
                     <div class="remember-forgot">
                         <a href="Recuperar.php">Recuperar Acceso</a>
                     </div>
-                    <a href="../Index/index.php">
+                    <a href="../Perfil/perfil.php">
                         <button type="submit" class="btn">Iniciar Sesión</button>   
                     </a>
                     <div class="register-link">

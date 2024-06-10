@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Inicio de sesión exitoso
         echo '<script>
                 alert("Inicio de sesión exitoso. Bienvenido");
-                window.location="../Index/index.php";
+                window.location="../Perfil/perfil.php";
              </script>';
 
         // Puedes redirigir al usuario a otra página aquí si lo deseas
