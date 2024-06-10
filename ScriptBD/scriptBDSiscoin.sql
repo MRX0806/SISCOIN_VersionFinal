@@ -1,35 +1,41 @@
-CREATE TABLE Usuario (
-    usuario_id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL, -- Se recomienda almacenar hashes de contraseñas
-    email VARCHAR(100) UNIQUE NOT NULL
+-- Tabla Usuarios
+CREATE TABLE Usuarios (
+    ID_User INT AUTO_INCREMENT PRIMARY KEY,
+    Name_Complete VARCHAR(50) UNIQUE NOT NULL,
+    Email VARCHAR(255) UNIQUE NOT NULL, -- Se recomienda almacenar hashes de contraseñas
+    User VARCHAR(50) UNIQUE NOT NULL,
+    Password VARCHAR(255) NOT NULL -- Es recomendable almacenar el hash de la contraseña, y no la contraseña en sí
 );
 
+-- Tabla Tema
 CREATE TABLE Tema (
     tema_id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     descripcion TEXT
 );
 
+-- Tabla Comentario
 CREATE TABLE Comentario (
     comentario_id INT AUTO_INCREMENT PRIMARY KEY,
     tema_id INT NOT NULL,
-    comment TEXT NOT NULL,
+    comentario TEXT NOT NULL,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (tema_id) REFERENCES Tema(tema_id) ON DELETE CASCADE
 );
 
+-- Tabla Estudiante
 CREATE TABLE Estudiante (
     estudiante_id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     apellido VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
     carrera VARCHAR(100) NOT NULL,
     ciclo CHAR(2) NOT NULL,
     usuario_id INT NOT NULL,
-    FOREIGN KEY (usuario_id) REFERENCES Usuario(usuario_id) ON DELETE CASCADE
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(ID_User) ON DELETE CASCADE
 );
 
+-- Tabla Perfil
 CREATE TABLE Perfil (
     perfil_id INT AUTO_INCREMENT PRIMARY KEY,
     estudiante_id INT NOT NULL,
@@ -38,26 +44,29 @@ CREATE TABLE Perfil (
     FOREIGN KEY (estudiante_id) REFERENCES Estudiante(estudiante_id) ON DELETE CASCADE
 );
 
+-- Tabla Profesor
 CREATE TABLE Profesor (
     profesor_id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     apellido VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
     carrera VARCHAR(100) NOT NULL,
     ciclo CHAR(2) NOT NULL,
     usuario_id INT NOT NULL,
-    FOREIGN KEY (usuario_id) REFERENCES Usuario(usuario_id) ON DELETE CASCADE
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(ID_User) ON DELETE CASCADE
 );
 
+-- Tabla Repositorio
 CREATE TABLE Repositorio (
     repositorio_id INT AUTO_INCREMENT PRIMARY KEY, 
     titulo VARCHAR(100) NOT NULL,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     curso VARCHAR(100) NOT NULL,
-    lineaInv VARCHAR(100) NOT NULL,
+    linea_investigacion VARCHAR(100) NOT NULL,
     estudiante_id INT NOT NULL,
     FOREIGN KEY (estudiante_id) REFERENCES Estudiante(estudiante_id) ON DELETE CASCADE
 );
+
 
 
 /*INSERTAR DATOS EN LA BD*/
