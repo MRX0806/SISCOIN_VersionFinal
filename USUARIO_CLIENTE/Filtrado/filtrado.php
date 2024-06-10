@@ -16,11 +16,11 @@
 <article>
     <div id="sep">
         <div class="sep2">
-            <h4>Buscador</h4>
+            <h4>Buscador de Personas Registradas en SISCOIN </h4>
             <form method="POST" action="busqueda.php"> <!-- Cambiado el action -->
-                <label for="searchInput">Ingrese título</label>
+                <label for="searchInput">Ingrese Título o Tema de Investigación</label>
                 <div class="search-box1">
-                    <input type="text" id="searchInput" name="searchInput" placeholder="Buscar interés">
+                    <input type="text" id="searchInput" name="searchInput" placeholder="Qué deseas buscar ahora?">
                     <button type="submit">Buscar</button>
                 </div>
             </form>
@@ -31,19 +31,20 @@
         <div class="container">
             <form method="POST" action="busqueda.php"> <!-- Cambiado el action -->
                 <div class="input-group">
-                  <label for="characteristicInput">Característica</label>
-                  <select class="caracter" id="characteristicInput" name="characteristicInput">
-                    <option value="Habilidades de Programación">Habilidades de Programación</option>
-                    <option value="Conocimientos en Diseño Gráfico">Conocimientos en Diseño Gráfico</option>
-                  </select>
+                  <label for="characteristicInput">A quién quieres buscar hoy?</label>
+                    <select class="caracter" id="characteristicInput" name="characteristicInput">
+                        <option value="Habilidades de Programación">Docente</option>
+                        <option value="Conocimientos en Diseño Gráfico">Alumno</option>
+                    </select>
                 </div>
                 <div class="input-group">
-                    <label for="skillInput">Habilidad</label>
-                    <input class="caracter" type="text" id="skillInput" name="skillInput" placeholder="Ingrese Habilidad">
+                    <label for="skillInput">Especialidad / Conocimientos</label>
+                    <input class="caracter" type="text" id="skillInput" name="skillInput" placeholder="Especialidad / Conocimientos">
                 </div>
                 <button type="submit">Aplicar Filtro</button>
             </form>
         </div>
+        <!-- Cuadro Resultado Búsqueda -->
         <div class="Resul"><br>
             <h4>Resultados de búsqueda</h4>
             <div class="table-container">
@@ -61,6 +62,7 @@
                 </table>
             </div>
         </div>
+        <!-- Cuadro Resultado Búsqueda -->
     </div>
 </article>
 </body>

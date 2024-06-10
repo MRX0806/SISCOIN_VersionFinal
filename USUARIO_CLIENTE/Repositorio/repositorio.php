@@ -21,7 +21,7 @@ $nombre_usuario = "Usuario";
         <div class="container mt-4">
             <div class="row mb-4">
                 <div class="col-md-12">
-                    <input type="text" id="searchBar" class="form-control" placeholder="Buscar por título...">
+                    <input type="text" id="searchBar" class="form-control" placeholder="Buscar por Palbras Claves...">
                 </div>
             </div>
             <div class="row" id="repositoryContainer">
