@@ -15,11 +15,11 @@
                 <form action="Iniciar_Sesion.php" method="post">
                     <h1>Bienvenido a SISCOIN</h1>
                     <div class="input-box">
-                        <input type="text" name="username" placeholder="Ingrese su Usuario" required>
+                        <input type="text" name="username" placeholder="Ingrese su Usuario" required value="johndoe">
                         <i class='bx bxs-user'></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" name="password" placeholder="Ingrese su Contraseña" required>
+                        <input type="password" name="password" placeholder="Ingrese su Contraseña" required value="password123">
                         <i class='bx bxs-lock-alt'></i>
                     </div>
                     <div class="remember-forgot">
