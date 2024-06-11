@@ -15,9 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         // Inicio de sesión exitoso
         echo '<script>
-                alert("Inicio de sesión exitoso. Bienvenido");
-                window.location="../Perfil/perfil.php";
-             </script>';
+                    alert("Inicio de sesión exitoso. Bienvenido, ' . $user. '");
+                    window.location="../Perfil/perfil.php";
+                  </script>';
 
         // Puedes redirigir al usuario a otra página aquí si lo deseas
     } else {
