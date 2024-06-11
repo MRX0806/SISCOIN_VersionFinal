@@ -69,45 +69,44 @@ CREATE TABLE Repositorio (
 
 
 
-/*INSERTAR DATOS EN LA BD*/
--- Insertando datos en la tabla Usuario
-INSERT INTO Usuario (username, password, email) VALUES 
-('johndoe', 'password123', 'johndoe@ucvvirtual.edu.pe'),
-('janedoe', 'qwerty789', 'janedoe@ucvvirtual.edu.pe'),
-('samsmith', 'sammy456', 'samsmith@ucvvirtual.edu.pe');
+/* Insertando datos en la tabla Usuarios */
+INSERT INTO Usuarios (Name_Complete, Email, User, Password) VALUES 
+('johndoe', 'johndoe@ucvvirtual.edu.pe', 'johndoe', 'password123'),
+('janedoe', 'janedoe@ucvvirtual.edu.pe', 'janedoe', 'qwerty789'),
+('samsmith', 'samsmith@ucvvirtual.edu.pe', 'samsmith', 'sammy456');
 
--- Insertando datos en la tabla Tema
+/* Insertando datos en la tabla Tema */
 INSERT INTO Tema (nombre, descripcion) VALUES 
 ('Introducción a la Programación', 'Conceptos básicos de programación'),
 ('Desarrollo Web', 'HTML, CSS, JavaScript'),
 ('Bases de Datos', 'Modelado de datos y SQL');
 
--- Insertando datos en la tabla Comentario
-INSERT INTO Comentario (tema_id, comment) VALUES 
+/* Insertando datos en la tabla Comentario */
+INSERT INTO Comentario (tema_id, comentario) VALUES 
 (1, '¡Interesante tema!'),
 (1, '¿Alguien sabe dónde encontrar más información?'),
 (2, 'Aquí hay un buen recurso para aprender CSS: https://example.com/css-tutorial');
 
--- Insertando datos en la tabla Estudiante
+/* Insertando datos en la tabla Estudiante */
 INSERT INTO Estudiante (nombre, apellido, email, carrera, ciclo, usuario_id) VALUES 
 ('Carlos', 'González', 'cgonzalez@ucvvirtual.edu.pe', 'Ingeniería de Sistemas', '10', 1),
 ('Ana', 'Martínez', 'amartinez@ucvvirtual.edu.pe', 'Ingeniería de Software', '8', 2),
 ('Pedro', 'Díaz', 'pdiaz@ucvvirtual.edu.pe', 'Ciencia de la Computación', '7', 3);
 
--- Insertando datos en la tabla Perfil
+/* Insertando datos en la tabla Perfil */
 INSERT INTO Perfil (estudiante_id, habilidades, caracteristicas) VALUES 
 (1, 'Java, C++, Git', 'Responsable y orientado a resultados'),
 (2, 'HTML, CSS, JavaScript', 'Creativa y colaborativa'),
 (3, 'Python, SQL, Linux', 'Analítico y autodidacta');
 
--- Insertando datos en la tabla Profesor
+/* Insertando datos en la tabla Profesor */
 INSERT INTO Profesor (nombre, apellido, email, carrera, ciclo, usuario_id) VALUES 
 ('María', 'López', 'mlopez@ucvvirtual.edu.pe', 'Ingeniería de Sistemas', '5', 1),
 ('Juan', 'Rodríguez', 'jrodriguez@ucvvirtual.edu.pe', 'Ingeniería de Software', '7', 2),
 ('Sofía', 'García', 'sgarcia@ucvvirtual.edu.pe', 'Ciencia de la Computación', '6', 3);
 
--- Insertando datos en la tabla Repositorio
-INSERT INTO Repositorio (titulo, curso, lineaInv, estudiante_id) VALUES 
+/* Insertando datos en la tabla Repositorio */
+INSERT INTO Repositorio (titulo, curso, linea_investigacion, estudiante_id) VALUES 
 ('Proyecto de Estructuras de Datos', 'Estructuras de Datos', 'Algoritmos de búsqueda', 1),
 ('Sitio Web Personal', 'Desarrollo Web', 'Diseño Responsivo', 2),
 ('Base de Datos para Gestión de Inventarios', 'Bases de Datos', 'Modelado ER', 3);
