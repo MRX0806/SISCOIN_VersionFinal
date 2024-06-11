@@ -15,10 +15,10 @@
                 <h3>Sistema Colaborativo para la Investigación</h3>
             </div>
             <div class="btn">
-                <a href="../Registrar_Sesion/Registrar.php">
+                <a href="../Login/Registrar.php">
                 <input type="submit" value="Registrarse" class="estilo-btn re">
                 </a>
-                <a href="../Iniciar_Sesion/Login.php">
+                <a href="../Login/Login.php">
                 <input type="submit" value="Iniciar Sesion" class="estilo-btn ini">
                 </a>
             </div>
@@ -30,26 +30,26 @@
                 <h2>Bienvenidos a nuestra plataforma de SISCOIN</h2>
                 <p>Nuestra plataforma está diseñada para fomentar la colaboración entre estudiantes apasionados por la investigación. Ofrecemos una plataforma en línea donde puedes crear un perfil, establecer tus áreas de interés y encontrar posibles colaboradores para tus proyectos de investigación.</p>
             </div>
-                <img src="../img/nino3.png" alt="niñolibros" class="ima1">
+                <img src="../../img/nino3.png" alt="niñolibros" class="ima1">
         </section>
         
         <section class="puntos container">
             <div class="inf1">
-                <img src="../img/nina3.png" alt="nin1">
+                <img src="../../img/nina3.png" alt="nin1">
                 <div class="text-info">
                     <h3>¿Quiénes somos?</h3>
                     <p>Somos un grupo de estudiantes de Ingeniería de Sistemas buscando solucionar un problema que es muy comun para todos los estudiantes universatarios. Nos apasiona la tecnología y la investigación, y buscamos generar un impacto positivo en la comunidad académica.</p>
                 </div>
             </div>
             <div class="inf1">
-                <img src="../img/nina2.png" alt="nin1">
+                <img src="../../img/nina2.png" alt="nin1">
                 <div class="text-info">
                     <h3>¿Qué queremos?</h3>
                     <p>Nuestro objetivo es ayudar a otros estudiantes a encontrar fuentes confiables y formar grupos de trabajo colaborativos para sus investigaciones. Creemos que, al unir nuestros conocimientos y habilidades, podemos lograr resultados más sólidos y significativos.</p>
                 </div>
             </div>
             <div class="inf1">
-                <img src="../img/nina1.png" alt="nin1">
+                <img src="../../img/nina1.png" alt="nin1">
                 <div class="text-info">
                     <h3>Nuestra mision</h3>
                     <p>Nuestra misión es empoderar a los estudiantes universitarios proporcionando las herramientas y la red necesarias para llevar a cabo investigaciones de alta calidad. Al facilitar la colaboración y el acceso a recursos confiables, contribuimos al avance del conocimiento y la innovación.</p>
@@ -57,8 +57,6 @@
             </div>
         </section>
         <footer>
-            <!-- hola:v -->
-            
         </footer>
     </article>
 </body>

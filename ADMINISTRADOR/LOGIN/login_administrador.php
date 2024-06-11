@@ -12,7 +12,7 @@
         <div class="imagen"></div>
         <div class="formulario-container">
             <div class="formulario">
-                <form action="Iniciar_Sesion.php" method="post">
+                <form action="IniciarSesionAdministrador.php" method="post">
                     <h1>Bienvenido Administrador</h1>
                     <div class="input-box">
                         <input type="text" name="username" placeholder="Ingrese su Usuario" required>
@@ -25,7 +25,7 @@
                     <div class="remember-forgot">
                         <a href="Recuperar.php">Recuperar Acceso</a>
                     </div>
-                    <a href="../Index/index.php">
+                    <a href="">
                         <button type="submit" class="btn">Iniciar Sesion</button>   
                     </a>
                 </form>

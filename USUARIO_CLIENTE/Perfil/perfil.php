@@ -27,7 +27,7 @@
                 <div class="messages">
                     <div class="user">
                         <span>INFORMACIÓN DEL ALUMNO</span>
-                        <img src="../img/ftperfil.jpg" alt="User Image" >
+                        <img src="../../img/ftperfil.jpg" alt="User Image" >
                     </div>
                     <span>Editar foto</span>
                 </div>

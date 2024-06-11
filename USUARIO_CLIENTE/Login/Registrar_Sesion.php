@@ -1,5 +1,6 @@
 <?php
 include '../../conexion.php'; // Incluye el archivo que contiene la función de conexión
+
 // Verificar si se ha enviado el formulario de registro
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obtener y sanitizar los datos del formulario
@@ -15,41 +16,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // Verificar si el correo ya está registrado
-    $verif_correo_query = "SELECT * FROM usuarios WHERE Email = ?";
-    $verif_stmt = $conn->prepare($verif_correo_query); // Preparar la consulta
-    $verif_stmt->bind_param("s", $email); // Asociar parámetros
-    $verif_stmt->execute(); // Ejecutar la consulta
-    $verif_stmt->store_result(); // Almacenar el resultado
+    try {
+        // Verificar si el correo ya está registrado
+        $verif_correo_query = "SELECT * FROM usuarios WHERE Email = :email";
+        $verif_stmt = $pdo->prepare($verif_correo_query); // Preparar la consulta
+        $verif_stmt->bindParam(':email', $email, PDO::PARAM_STR); // Asociar parámetros
+        $verif_stmt->execute(); // Ejecutar la consulta
 
-    if ($verif_stmt->num_rows > 0) {
-        $error_message = "Este correo ya ha sido registrado, por favor intenta con otro correo diferente.";
-        header("Location: Registrar.php?error_message=" . urlencode($error_message));
-        exit();
-    }
-    $verif_stmt->close(); // Cerrar la consulta
+        if ($verif_stmt->rowCount() > 0) {
+            $error_message = "Este correo ya ha sido registrado, por favor intenta con otro correo diferente.";
+            header("Location: Registrar.php?error_message=" . urlencode($error_message));
+            exit();
+        }
 
-    // Preparar la consulta SQL para insertar los datos
-    $insert_query = "INSERT INTO usuarios (Name_Complete, Email, User, Password) VALUES (?, ?, ?, ?)";
-    $insert_stmt = $conn->prepare($insert_query); // Preparar la consulta
-    $insert_stmt->bind_param("ssss", $name_complete, $email, $user, $password); // Asociar parámetros
+        // Preparar la consulta SQL para insertar los datos
+        $insert_query = "INSERT INTO usuarios (Name_Complete, Email, User, Password) VALUES (:name_complete, :email, :user, :password)";
+        $insert_stmt = $pdo->prepare($insert_query); // Preparar la consulta
+        $insert_stmt->bindParam(':name_complete', $name_complete, PDO::PARAM_STR); // Asociar parámetros
+        $insert_stmt->bindParam(':email', $email, PDO::PARAM_STR); // Asociar parámetros
+        $insert_stmt->bindParam(':user', $user, PDO::PARAM_STR); // Asociar parámetros
+        $insert_stmt->bindParam(':password', $password, PDO::PARAM_STR); // Asociar parámetros
 
-    // Ejecutar la consulta preparada y verificar si se ejecutó correctamente
-    if ($insert_stmt->execute()) {
+        // Ejecutar la consulta preparada y verificar si se ejecutó correctamente
+        if ($insert_stmt->execute()) {
+            echo '<script>
+                    alert("Registro de Usuario exitoso. Bienvenido");
+                    window.location="Registrar.php";
+                 </script>';
+        } else {
+            echo '<script>
+                    alert("Error al Registrar Usuario. Intentelo Nuevamente");
+                    window.location="Registrar.php";
+                </script>';
+        }
+    } catch (PDOException $e) {
         echo '<script>
-                alert("Registro de Usuario exitoso. Bienvenido");
+                alert("Error: ' . $e->getMessage() . '");
                 window.location="Registrar.php";
-             </script>';
-    } else {
-        echo '<script>
-                alert("Erro al Registrar Usuario. Intentelo Nuevamente");
-                window.location="Registrar.php";
-            </script>';
+              </script>';
     }
-
-    // Cerrar la conexión y liberar los recursos
-    $insert_stmt->close();
-    $conn->close();
 } else {
     // Si se intenta acceder al script sin enviar el formulario, redirigir a la página de registro
     header("Location: Registrar.php");

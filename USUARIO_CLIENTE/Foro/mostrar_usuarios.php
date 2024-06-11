@@ -1,7 +1,7 @@
 <?php
     include '../../conexion.php';
     try {
-        $sql = "SELECT CONCAT(nombre, ' ', apellido) AS nombre_completo FROM estudiante";
+        $sql = "SELECT CONCAT(nombre, ' ', apellido) AS nombre_completo FROM Estudiante";
         $result = $pdo->query($sql);
         if ($result->rowCount() > 0) {
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {

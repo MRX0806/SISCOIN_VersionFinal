@@ -52,7 +52,7 @@ main {
 .two{
     grid-column: 1;
     grid-row: 2;
-    background-color: #208acd;
+    background-color: #59b9f6;
     border-radius: 20px; /* Imágenes redondeadas */
     padding: 20px;
 }
