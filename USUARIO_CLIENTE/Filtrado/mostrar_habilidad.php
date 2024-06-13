@@ -3,9 +3,6 @@ include '../../conexion.php';
 try {
     $sql = "SELECT habilidades FROM Perfil";
     $result = $pdo->query($sql);
-
-    echo "<!-- SQL executed successfully -->"; // Agrega esto
-
     if ($result->rowCount() > 0) {
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             echo '<option value="' . htmlspecialchars($row['habilidades']) . '">' . htmlspecialchars($row['habilidades']) . '</option>';
@@ -14,6 +11,6 @@ try {
         echo "<!-- No hay habilidades que mostrar -->"; // Agrega esto
     }
 } catch (PDOException $e) {
-    echo "Error al mostrar los temas: " . $e->getMessage();
+    echo "Error al mostrar las habilidades: " . $e->getMessage();
 }
 ?>

@@ -19,19 +19,26 @@
             <div class="caracteristicas">
                 <form method="POST" action="busqueda.php">
                     <div class="input-group">
-                    <label for="characteristicInput">¿Qué habilidades debe tener tu compañero?</label>
-                    <select class="caracter" id="characteristicInput" name="characteristicInput">
+                        <label for="characteristicInput">¿Qué habilidades debe tener tu compañero?</label>
+                        <select class="caracter" id="characteristicInput" name="characteristicInput">
                             <?php
                                 include 'mostrar_habilidad.php';  // Asegúrate de que esta ruta es correcta
                             ?>
                         </select>
                     </div>
                     <div class="input-group">
-                        <label for="skillInput">¿Qué características debe tener tu compañero?</label>
-                        <input class="caracter" type="text" id="skillInput" name="skillInput" placeholder="caracteristicas">
+                        <label for="characteristicInput">¿Qué características debe tener tu compañero?</label>
+                        <select class="caracter" id="characteristicInput" name="characteristicInput">
+                            <?php
+                                include 'mostrar_caracteristicas.php';  // Asegúrate de que esta ruta es correcta
+                            ?>
+                        </select>
                     </div>
                     <button type="submit">Aplicar Filtro</button>
                 </form>
+            </div>
+            <div>
+                
             </div>
         </article>
     </section>

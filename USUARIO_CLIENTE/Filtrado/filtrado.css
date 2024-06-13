@@ -18,6 +18,27 @@ h4 {
     font-size: 20px;
     margin-bottom: 5%;
 }
+label {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+select.caracter {
+    font-size: 16px; /* Cambia el tamaño de la letra */
+    border: 1px solid #ccc; /* Color del borde por defecto */
+    padding: 5px; /* Espaciado interior */
+    border-radius: 8px; /* Bordes redondeados */
+}
+button {
+    width: 100px;
+    background-color: #f44336;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 10px 5px;
+    margin-left: 13px;
+}
 .container {
     width: 100vh;
     background: #fff;
@@ -54,62 +75,8 @@ h4 {
 
 
 
-#sep {
-    padding: 20px;
-    width: 70%;
-    background-color: #d0d0d0;
-    margin: 2% 15%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.search-box1 {
-    align-items: center;
-    border-radius: 10px;
-    margin: 5px 0;
-    width: 100%;
-    justify-content: space-between;
-    display: flex;
-    padding: 5px;
-}
-
-.search-box1 input {
-    height: 100%; 
-    border: 1px solid black ;
-    outline: none;
-    background-color: #ffffff;
-    margin: 10px;
-    width: 100%;
-    padding: 13px;
-    border-radius: 8px;
-}
-
-button {
-    width: 100px;
-    background-color: #1a3d5d;
-    border: none;
-    border-radius: 8px;
-    color: #fff;
-    cursor: pointer;
-    margin-top: 5px;
-    padding: 10px 5px;
-}
 
 
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 10px;
-    background-color: #fff;
-    border: 1px solid #000;
-    outline: none;
-}
 
 table {
     width: 100%;
