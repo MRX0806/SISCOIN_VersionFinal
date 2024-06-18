@@ -41,63 +41,115 @@
                             <p>Contenido del chat</p>
                         </div>
                         <div class="card-footer">
-                            <form>
-                                <div class="form-group" action="" method="post">
+                            <form method="POST">
+                                <div class="form-group" >
                                     <label for="reply">Responder</label>
                                         <input type="text" name="mensaje" placeholder="Escribe un mensaje..." class="form-control">
                                     </div>
                                 <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
                             </form>
-                            <?php
+                            <?php  include '../../conexion.php';
+
+if(isset($_POST['enviar'])){
+    $mensaje =$_POST['mensaje'];
+    $de = 5; // revisar los ID porq este es prueba
+    $para = 2; // revisar los ID porq este es prueba
+
+
+    try {
+            // Verificar si ya existe un chat entre los usuarios
+            $stmt = $pdo->prepare("SELECT * FROM info_chat WHERE (de = :de AND para = :para) OR (de = :para AND para = :de)");
+            $stmt->bindParam(':de', $de);
+            $stmt->bindParam(':para', $para);
+            $stmt->execute();
+            $com = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            if($stmt->rowCount() == 0){
+                // Si no existe, insertar un nuevo registro en info_chat
+                $insert = $pdo->prepare("INSERT INTO info_chat (de, para) VALUES (:de, :para)");
+                $insert->bindParam(':de', $de);
+                $insert->bindParam(':para', $para);
+                $insert->execute();
+
+                // Obtener el ID del nuevo registro insertado
+                $id_chat = $pdo->lastInsertId();
+
+            } else {
+                // Si ya existe, obtener el ID del chat existente
+                $id_chat = $com[0]['id_infoChat'];
+            }
+
+            // Insertar el mensaje en content_chat
+            $insert2 = $pdo->prepare("INSERT INTO content_chat (id_chat, de, para, mensaje, fecha, leido) 
+                                     VALUES (:id_chat, :de, :para, :mensaje, now(), '0')");
+            $insert2->bindParam(':id_chat', $id_chat);
+            $insert2->bindParam(':de', $de);
+            $insert2->bindParam(':para', $para);
+            $insert2->bindParam(':mensaje', $mensaje);
+            $insert2->execute();
+
+            echo "Mensaje enviado correctamente.";
+
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+
+}
+
+/*include '../../conexion.php';
+
+// Verificar si $_SESSION['estudiante_id'] está definida y tiene valor
+if (isset($_SESSION['perfil_id'])) {
+    $de = $_SESSION['estudiante_id'];
+    
+    if (isset($_POST['enviar'])) {
+        $mensaje = $_POST['mensaje'];
+        $para = $_GET['user']; // Asegúrate de que $_GET['user'] esté definido y sea seguro de usar
+
+        try {
+            // Verificar si ya existe un chat entre los usuarios
+            $stmt = $pdo->prepare("SELECT * FROM info_chat WHERE (de = :de AND para = :para) OR (de = :para AND para = :de)");
+            $stmt->bindParam(':de', $de);
+            $stmt->bindParam(':para', $para);
+            $stmt->execute();
+            $com = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            if($stmt->rowCount() == 0){
+                // Si no existe, insertar un nuevo registro en info_chat
+                $insert = $pdo->prepare("INSERT INTO info_chat (de, para) VALUES (:de, :para)");
+                $insert->bindParam(':de', $de);
+                $insert->bindParam(':para', $para);
+                $insert->execute();
+
+                // Obtener el ID del nuevo registro insertado
+                $id_chat = $pdo->lastInsertId();
+
+            } else {
+                // Si ya existe, obtener el ID del chat existente
+                $id_chat = $com[0]['id_infoChat'];
+            }
+
+            // Insertar el mensaje en content_chat
+            $insert2 = $pdo->prepare("INSERT INTO content_chat (id_chat, de, para, mensaje, fecha, leido) 
+                                     VALUES (:id_chat, :de, :para, :mensaje, now(), '0')");
+            $insert2->bindParam(':id_chat', $id_chat);
+            $insert2->bindParam(':de', $de);
+            $insert2->bindParam(':para', $para);
+            $insert2->bindParam(':mensaje', $mensaje);
+            $insert2->execute();
+
+            echo "Mensaje enviado correctamente.";
+
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+    }
+} else {
+    echo "Error: Session 'estudiante_id' no está definida.";
+}*/
+?>
                             
-                            if(isset($_POST['enviar'])){
-                                $mensaje =$_POST['mensaje'];
-                                $de = $_SESSION['id'];
-                                $para = $_GET(['user']);
-
-                                require_once '../../conexion.php';
-
-                                try {
-                                    $stmt = $pdo -> prepare("SELECT * FROM info_chat WHERE de = ':de' AND para = ':para' OR de = ':para' AND para = ':de'");
-                                    $stmt->bindParam(':de', $de);
-                                    $stmt->bindParam(':para', $para);
-                                    $stmt->execute();
-
-                                    $com = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                                    if($stmt->rowCount()== 0){
-                                        $insert = $pdo->prepare("INSERT INTO info_chat (de,para) VALUES (':de',':para')");
-                                        $insert->bindParam(':de', $de);
-                                        $insert->bindParam(':para', $para);
-                                        $insert->execute();
-
-                                        $siguiente = $pdo->prepare("SELECT id_infoChat FROM info_chat WHERE de = ':de' AND para = ':para' OR de = ':para' AND para = ':de'");
-                                        $siguiente->bindParam(':de', $de);
-                                        $siguiente->bindParam(':para', $para);
-                                        $siguiente->execute();
-
-                                        $si = $siguiente->fetchAll(PDO::FETCH_ASSOC);
-
-                                        $insert2 = $pdo->prepare("INSERT INTO content_chat (id_chat,de,para,mensaje,fecha,leido) VALUES (':id_chat',':de',':para',':mensaje',now(),'0')");
-                                        $insert2->bindParam(':id_chat', $si['id_chat']);
-                                        $insert2->bindParam(':de', $de);
-                                        $insert2->bindParam(':para', $para);
-                                        $insert2->bindParam(':mensaje',$mensaje);
-                                        $insert2->execute();
-                                    }else{
-                                        $insert3 = $pdo->prepare("INSERT INTO content_chat (id_chat,de,para,mensaje,fecha,leido) VALUES (':id_chat',':de',':para',':mensaje',now(),'0')");
-                                        $insert3->bindParam(':id_chat', $com['id_chat']);
-                                        $insert3->bindParam(':de', $de);
-                                        $insert3->bindParam(':para', $para);
-                                        $insert3->bindParam(':mensaje',$mensaje);
-                                        $insert3->execute();
-                                    }
-                                } catch (PDOException $e) {
-                                    echo "ERROR PE MONGOL" . $e->getMessage();
-                                }
-
-                            }
-                            ?>
+                        
                         </div>
                     </div>
                 </div>
