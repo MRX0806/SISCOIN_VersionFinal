@@ -4,11 +4,24 @@
     $USUARIO = "root"; 
     $PASS = "";
 
+    /*PDO*/
     try {
         $pdo = new PDO("mysql:host=$SERVER;dbname=$BDNAME", $USUARIO, $PASS);
-        // Set the PDO error mode to exception
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        echo "No se pudo acceder a la BD: " . $e->getMessage(); //me indica el error que capturo en caso de que el try no funcione
+        echo "conexion exitosa";
+    } catch (Exception $e) {
+        echo "No se pudo conectar a la base de datos: " . $e->getMessage();
     }
 
+    /* MYSQLI
+    try {
+        $mysqli = new mysqli($SERVER, $USUARIO, $PASS, $BDNAME);
+        if ($mysqli->connect_errno) {
+            throw new Exception("No se pudo conectar a la base de datos: " . $mysqli->connect_error);
+        }
+        echo "Conexión exitosa";
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    */
+?>

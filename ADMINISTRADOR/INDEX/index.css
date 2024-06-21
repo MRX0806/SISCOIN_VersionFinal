@@ -1,0 +1,99 @@
+.btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+.estilo-btn{
+    background-color: #4CAF50; /* Define el color de fondo del botón. */
+    border: 2px solid #ffffff; 
+    color: white; /* Define el color del texto dentro del botón. */
+    padding: 15px 32px; /* Agrega espacio dentro del botón (15px arriba/abajo y 32px izquierda/derecha). */
+    text-align: center; /* Centra el texto dentro del botón. */
+    text-decoration: none; /* Elimina cualquier decoración de texto (como subrayado). */
+    display: inline-block; /* Hace que el botón se comporte como un elemento en línea, pero permite definir altura y anchura. */
+    font-size: 16px; /* Define el tamaño de la fuente del texto del botón. */
+    cursor: pointer; /* Cambia el cursor a una mano cuando el ratón pasa sobre el botón. */
+    border-radius: 12px; /* Redondea las esquinas del botón. */
+    margin:  4px;
+}
+.estilo-btn:hover{
+    background-color: #45a049; /* Cambia el color de fondo cuando el ratón pasa sobre el botón. */
+    box-shadow: 0 8px #666; /* Cambia la sombra cuando el ratón pasa sobre el botón (0px de desplazamiento horizontal, 8px de desplazamiento vertical, y color de sombra #666). */
+    transform: translateY(-1px); /* Mueve el botón hacia arriba 2px cuando el ratón pasa sobre él. */
+}
+.estilo-btn:active {
+    background-color: #4d3e8e; /* Cambia el color de fondo cuando el botón está activo (clickeado). */
+    box-shadow: 0 2px #b32020; /* Cambia la sombra cuando el botón está activo (0px de desplazamiento horizontal, 2px de desplazamiento vertical, y color de sombra #666). */
+    transform: translateY(2px); /* Mueve el botón hacia abajo 2px cuando está activo (clickeado). */
+}
+.relleno {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0px 0px 0px;
+    /* gap: 2em; Espacio entre la imagen y el contenido */
+}
+
+.contenido {
+    text-align: left; /* Alineación del texto */
+    padding: 150px 100px 150px 150px;
+}
+
+.relleno .ima1 {
+    width: 40em;
+    margin: 100px 150px 0px 100px;
+}
+.relleno h2{
+    margin: 0 0 10px;
+  font-size: 3rem;
+  color: #721410;
+}
+.relleno p{
+    margin: 4;
+    line-height: 1.6;
+}
+.puntos {
+    display: flex;
+    justify-content: center;
+    margin: 80px 20px;
+    /* gap: 20px; Espacio entre los elementos */
+}
+
+.inf1 {
+    padding: 30px;
+    margin: 0 10px;
+    background-color: #91C686;
+    max-width: 400px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s ease; /* Efecto de transición */
+    text-align: center;
+}
+
+.inf1:hover {
+    transform: translateY(-5px); /* Efecto de levantamiento al pasar el cursor */
+}
+
+.puntos img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+    border-radius: 50%; /* Imágenes redondeadas */
+}
+
+.text-info {
+    color: rgb(0, 0, 0);
+}
+
+.text-info h3 {
+    font-size: 24px; /* Texto más grande */
+    margin-bottom: 15px;
+    color: #721410;
+}
+
+.text-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
