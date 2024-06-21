@@ -8,6 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+
     <div class="contenedor">
         <div class="imagen"></div>
         <div class="formulario-container">
@@ -28,6 +29,7 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>
 
