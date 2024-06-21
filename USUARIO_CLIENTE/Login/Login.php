@@ -23,7 +23,7 @@
                         <i class='bx bxs-lock-alt'></i>
                     </div>
                     <div class="remember-forgot">
-                        <a href="Recuperar.php">Recuperar Acceso</a>
+                        <a href="Recuperar_Contraseña.php">Recuperar Acceso</a>
                     </div>
                     <a href="">
                         <button type="submit" class="btn">Iniciar Sesión</button>   

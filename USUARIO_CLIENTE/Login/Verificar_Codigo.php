@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperar Acceso</title>
-    <link rel="stylesheet" href="Cambiar_Contraseña.css">
+    <title>Validación Code</title>
+    <link rel="stylesheet" href="Verificar_Codigo.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -12,19 +12,19 @@
         <div class="imagen"></div>
         <div class="formulario-container">
             <div class="formulario">
-                <form action="Recuperar_Pass.php" method="post">
-                    <h1>Cambiar Contraseña</h1>
+                <form action="Verificar_Code.php" method="post">
+                    <h1>Validación Code</h1>
                     <div class="input-box">
-                        <input type="text" name="username" placeholder="Ingrese su Nombre de Usuario" required>
+                        <input type="text" name="code" placeholder="Ingrese su el Codigo de Verificación" required>
                         <i class='bx bxs-user'></i>
                     </div>
-                    <!-- Campo para la contraseña -->
                     <div class="input-box">
-                        <input type="password" name="password" placeholder="Ingrese su Nueva Contraseña" required>
-                        <i class='bx bxs-lock-alt'></i>
-                    <!-- Botón de inicio de sesión -->
-                    <button type="submit" class="btn">Recuperar Acceso</button>
-                    <!-- Enlace para registrarse -->
+                        <input type="text" name="contraseña" placeholder="Codigo de Verificación" disabled>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <!-- Botón de solicitar código de recuperación -->
+                    <button type="submit" class="btn">Recuperar Contraseña</button>
+                    <!-- Enlace para volver a la pestaña Login -->
                     <div class="register-link">
                         <a href="Login.php">Volver a la Pestaña Login</a>
                     </div>
