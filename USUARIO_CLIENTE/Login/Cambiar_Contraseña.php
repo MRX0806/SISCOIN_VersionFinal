@@ -13,7 +13,7 @@
         <div class="formulario-container">
             <div class="formulario">
                 <form action="Recuperar_Pass.php" method="post">
-                    <h1>Recuperar Acceso</h1>
+                    <h1>Cambiar Contraseña</h1>
                     <div class="input-box">
                         <input type="text" name="username" placeholder="Ingrese su Nombre de Usuario" required>
                         <i class='bx bxs-user'></i>
