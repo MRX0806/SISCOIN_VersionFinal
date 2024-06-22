@@ -39,7 +39,7 @@ body{
 }
 
 .formulario{
-    height: 80%;
+    height: 55%;
     padding: 30px;
     background-color: rgba(254, 254, 254, 0.39);
     backdrop-filter: blur(10px);

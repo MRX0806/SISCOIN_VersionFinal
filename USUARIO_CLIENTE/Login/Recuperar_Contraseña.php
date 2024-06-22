@@ -24,14 +24,6 @@
                         <a href="Login.php">Volver a la Pestaña Login</a>
                     </div>
                 </form>
-                <!-- Formulario para validar el código de recuperación -->
-                <form action="Validar_Codigo.php" method="post">
-                    <div class="input-box">
-                        <input type="text" name="codigo" placeholder="Ingrese el Código de Recuperación" required>
-                        <i class='bx bxs-lock'></i>
-                    </div>
-                    <button type="submit" class="btn">Validar Código</button>
-                </form>
             </div>
         </div>
     </div>
