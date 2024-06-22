@@ -21,8 +21,11 @@
     <nav>
             <ul>
                 <li><a href="">REPORTE</a></li>
-                <li><a href="">LISTADO</a></li>
-                <li><a href="">GENERAR PDF</a></li>
+                
+                <li><a href="fpdf/listado.php"target="_blank">>LISTADO</a></li>
+
+                <li><a href="fpdf/index.php"target="_blank">GENERAR PDF</a></li>
+                
             </ul>
         </nav>
     <main>
