@@ -68,6 +68,22 @@ CREATE TABLE Repositorio (
     FOREIGN KEY (estudiante_id) REFERENCES Estudiante(estudiante_id) ON DELETE CASCADE
 );
 
+-- Tabla CHATS
+CREATE TABLE info_chat (
+    id_infoChat INT(11) AUTO_INCREMENT PRIMARY KEY,
+    de INT(11) NOT NULL,
+    para INT(11) NOT NULL,
+);
+
+CREATE TABLE content_chat (
+    id_chat INT(11) AUTO_INCREMENT PRIMARY KEY,
+    id_infoChat INT(11) NOT NULL,
+    de INT(11) NOT NULL,
+    para INT(11) NOT NULL
+    mensaje VARCHAR(200) NOT NULL,
+    fecha DATETIME NOT NULL,
+    leido INT(11) NOT NULL
+);
 
 
 /* Insertando datos en la tabla Usuarios */

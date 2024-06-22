@@ -18,3 +18,14 @@ body {
 .card-header, .card-footer {
     background-color: #f8f9fa;
 }
+
+.burbuja{
+    background-color: #a1c4e7;
+    height: 50px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.burbuja::-webkit-scrollbar {
+    width: 10px;
+}
