@@ -4,7 +4,8 @@ CREATE TABLE Usuarios (
     Name_Complete VARCHAR(50) UNIQUE NOT NULL,
     Email VARCHAR(255) UNIQUE NOT NULL, -- Se recomienda almacenar hashes de contraseñas
     User VARCHAR(50) UNIQUE NOT NULL,
-    Password VARCHAR(255) NOT NULL -- Es recomendable almacenar el hash de la contraseña, y no la contraseña en sí
+    Password VARCHAR(255) NOT NULL, -- Es recomendable almacenar el hash de la contraseña, y no la contraseña en sí 
+    Recovery_Code VARCHAR(8) 
 );
 
 -- Tabla Tema

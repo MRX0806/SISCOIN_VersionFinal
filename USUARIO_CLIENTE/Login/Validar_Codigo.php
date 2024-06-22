@@ -19,15 +19,21 @@ if ($stmt->rowCount() > 0) {
     $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
     $contrasenaActual = $usuario['Password']; // Asegúrate de que el campo de la contraseña se llama 'Password'
 
-    $_SESSION['message'] = "El código ingresado es válido. Tu contraseña actual es: $contrasenaActual";
-    $_SESSION['message_type'] = 'success';
+    // Preparar el mensaje para la alerta JavaScript
+    $mensaje = "Código ingresado: " . htmlspecialchars($codigoIngresado) . "\nContraseña recuperada: " . $contrasenaActual;
+
+    // Mostrar el mensaje en una alerta JavaScript
+    echo '<script>
+            alert("' . $mensaje . '");
+            window.location="../Login/Login.php";
+         </script>';
 } else {
     // Código inválido
     $_SESSION['message'] = "El código ingresado no es válido.";
     $_SESSION['message_type'] = 'error';
-}
 
-// Redirigir de vuelta a la página original
-header('Location: Recuperar_Contraseña.php  ');
-exit();
+    // Redirigir de vuelta a la página original
+    header('Location: Recuperar_Contraseña.php');
+    exit();
+}
 ?>

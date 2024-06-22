@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('../../conexion.php');
 
 // Usar namespaces de PHPMailer
@@ -26,8 +27,8 @@ $email = $_POST['email'];
 // Consultar si el correo electrónico existe en la base de datos
 $query = "SELECT * FROM Usuarios WHERE Email = :email";
 $stmt = $pdo->prepare($query);
-$stmt->execute(['email' => $email]);    
-    
+$stmt->execute(['email' => $email]);
+
 // Verificar si se encontró algún resultado
 if ($stmt->rowCount() > 0) {
     // Generar un código de recuperación de 8 caracteres
@@ -63,13 +64,21 @@ if ($stmt->rowCount() > 0) {
 
         // Enviar el correo
         $mail->send();
-        echo 'El mensaje ha sido enviado';
+        $_SESSION['email'] = $email; // Guardar el email en la sesión
+        $_SESSION['message'] = 'El código de recuperación ha sido enviado a tu correo electrónico.';
+        $_SESSION['message_type'] = 'success';
     } catch (Exception $e) {
         // Mostrar error si ocurre algún problema al enviar el correo
-        echo "El mensaje no pudo ser enviado. Error de Mailer: {$mail->ErrorInfo}";
+        $_SESSION['message'] = "El mensaje no pudo ser enviado. Error de Mailer: {$mail->ErrorInfo}";
+        $_SESSION['message_type'] = 'error';
     }
 } else {
     // Mostrar mensaje si no se encontró el correo electrónico en la base de datos
-    echo "El correo electrónico ingresado no está registrado.";
+    $_SESSION['message'] = "El correo electrónico ingresado no está registrado.";
+    $_SESSION['message_type'] = 'error';
 }
+
+// Redirigir de vuelta a la página original
+header('Location: Recuperar_Contraseña.php');
+exit();
 ?>
