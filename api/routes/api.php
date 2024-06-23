@@ -19,6 +19,7 @@ use App\Http\Controllers\FiltroController;
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/verificar-sesion', [AuthController::class, 'verificarSesion']);
+Route::post('/logout', [AuthController::class, 'logout']);
 
 // Asegúrate de que esta línea esté en tu archivo routes/api.php
 Route::get('/perfil/{id}', [PerfilController::class, 'show']);

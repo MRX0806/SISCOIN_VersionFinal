@@ -62,26 +62,13 @@ class AuthController extends Controller
             ]);
         }
     }
-/*
-    public function perfil()
+    public function logout()
     {
-        if (Session::has('user_id')) {
-            $userId = Session::get('user_id');
-            $estudiante = DB::table('Estudiantes')
-                ->where('usuario_id', $userId)
-                ->first();
+        Session::flush();
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Sesión cerrada exitosamente',
+        ]);
+    }
 
-            if ($estudiante) {
-                return response()->json($estudiante);
-            } else {
-                return response()->json([
-                    'error' => 'Perfil no encontrado'
-                ], 404);
-            }
-        } else {
-            return response()->json([
-                'error' => 'No autenticado'
-            ], 401);
-        }
-    }*/
 }
