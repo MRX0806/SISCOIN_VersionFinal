@@ -1,0 +1,219 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos generales del contenedor principal */
+main {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    margin: 0;
+    padding-top: 20px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+h4 {
+    margin: 5px 0;
+    color: #000000;
+    text-align: center;
+}
+
+/* Botón */
+button {
+    color: black;
+    background-color: #ffffff;
+    border: 0;
+    width: 50%;
+    height: 39px;
+    font-size: 14px;
+    box-shadow: 5px 1px #888888;
+}
+.botonFormu{
+    width: 25%;
+}
+
+button:hover {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.container {
+    width: 100vh;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+}
+
+/* Ajustes específicos para secciones */
+.participantes {
+    grid-column: 1 / 2;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.tema {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.tema-contenido {
+    cursor: pointer;
+    color: #000000;
+    padding: 10px;
+}
+
+.tema-contenido:hover {
+    background-color: #f2f2f2;
+}
+
+.temas {
+    grid-column: 2 / 3;
+}
+
+.participantes,
+.temas {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    height: auto;
+    cursor: pointer;
+    font-family: Sans-serif;
+    height: 44vh;
+}
+
+.opciones_botones {
+    width: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(139, 139, 139, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 0 solid #e4e4e4;
+    max-width: 1000px;
+    box-shadow: 1px 1px 1px rgba(164, 164, 164, 0.3);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.close {
+    color: rgb(0, 0, 0);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+#searchBar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Asegura que el padding se tenga en cuenta en el ancho */
+}
+input[type="text"]{
+    width: 54%;
+    height: 33px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(235 235 235 / 66%);
+    border-radius: 40px;
+    font-size: 16px;
+    color:#000000;
+    padding: 0 20px;
+}
+/* Media queries para pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .header-degradado {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 95%;
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .participantes {
+        grid-column: 1 / 2;
+    }
+
+    .temas {
+        grid-column: 1 / 2;
+    }
+
+    .participantes,
+    .temas {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .usuario {
+        margin-top: 10px;
+        margin-right: 0;
+    }
+}

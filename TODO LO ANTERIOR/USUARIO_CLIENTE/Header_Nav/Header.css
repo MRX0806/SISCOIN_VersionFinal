@@ -1,0 +1,86 @@
+/* Standard styles */
+body {
+    font-family: 'Comic Sans MS', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222020;
+    background-image: url('../img/FondoMontania.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding: 0; /* Adjust padding for better spacing */
+    box-sizing: border-box;
+}
+
+.header-degradado {
+    background: radial-gradient(circle, rgba(234, 255, 0, 0.7), rgba(151, 248, 255, 0.8), rgba(153, 255, 121, 0.9));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #ffffff;
+    margin: 0;
+    font-style: italic;
+}
+
+h3 {
+    margin: 5px 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+    flex: 1;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    margin-right: 2%;
+}
+
+.usuario img {
+    width: 40px;
+    margin-left: 10px;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 0; /* Remove padding to ensure full width */
+    }
+    
+    .header-degradado {
+        flex-direction: column;
+        text-align: center;
+        width: 100%; /* Ensure full width */
+        box-sizing: border-box;
+    }
+
+    .usuario {
+        margin-top: 10px; /* Adjust spacing for the user section */
+        margin-right: 0; /* Reset margin */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    h3 {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+}
