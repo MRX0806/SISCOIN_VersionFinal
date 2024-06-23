@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error al iniciar sesión:', error));
     });
-    
+    /*
     // Registro de usuario
     document.getElementById('register-form').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.includes('perfil.html')) {
         verificarSesion();
         cargarPerfil();
-    }
+    }*/
 });
 
 function verificarSesion() {
