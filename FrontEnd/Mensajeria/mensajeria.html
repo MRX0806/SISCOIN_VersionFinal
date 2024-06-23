@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat</title>
+        <link rel="stylesheet" href="mensajeria.css">
+        <script src="usuario.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="header-degradado"> 
+                <div class="center"> 
+                    <h1>SISCOIN</h1> 
+                    <h3>Sistema Colaborativo para la Investigación</h3>
+                </div>
+                <div class="usuario" id="usuario"></div>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../Perfil/perfil.html">PERFIL</a></li>
+                <li><a href="../Foro/foro.html">FORO</a></li>
+                <li><a href="../Repositorio/repositorio.html">REPOSITORIO</a></li>
+                <li><a href="../Filtrado/filtrado.html">MATCH</a></li>
+                <li><a href="../Mensajeria/mensajeria.html">MENSAJERIA</a></li>
+            </ul>
+        </nav>
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3 border-right">
+                        <div class="p-3">
+                            <h4>Bandeja de entrada</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item active">Chat 1</li>
+                                <li class="list-group-item">Chat 2</li>
+                                <li class="list-group-item">Chat 3</li>
+                                <li class="list-group-item">Chat 4</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        <div class="p-3">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Otro usuario</strong>
+                                    <span>Fecha: <span id="current-date"></span></span>
+                                </div>
+                                <div class="card-body">
+                                    <p>Contenido del chat</p>
+                                </div>
+                                <div class="card-footer">
+                                    <form id="chat-form" method="post">
+                                        <div class="form-group">
+                                            <label for="reply">Responder</label>
+                                            <input type="text" name="mensaje" placeholder="Escribe un mensaje..." class="form-control">
+                                        </div>
+                                        <button type="submit" name="enviar" class="btn btn-primary">Enviar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            document.getElementById('current-date').textContent = new Date().toISOString().split('T')[0];
+        </script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrado</title>
+    <link rel="stylesheet" href="filtrado.css">
+    <script defer src="filtrado.js"></script>
+    <script src="usuario.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-degradado"> 
+            <div class="center"> 
+                <h1>SISCOIN</h1> 
+                <h3>Sistema Colaborativo para la Investigación</h3>
+            </div>
+            <div class="usuario" id="usuario"></div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../Perfil/perfil.html">PERFIL</a></li>
+            <li><a href="../Foro/foro.html">FORO</a></li>
+            <li><a href="../Repositorio/repositorio.html">REPOSITORIO</a></li>
+            <li><a href="../Filtrado/filtrado.html">MATCH</a></li>
+            <li><a href="../Mensajeria/mensajeria.html">MENSAJERIA</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="container">
+            <h4>Búsqueda de personas</h4>
+            <div class="caracteristicas">
+                <form id="form-filtrado">
+                    <div class="input-group">
+                        <label for="habilidades">¿Qué habilidades debe tener tu compañero?</label>
+                        <select class="caracter" id="habilidades" name="habilidades"></select>
+                    </div>
+                    <div class="input-group">
+                        <label for="caracteristicas">¿Qué características debe tener tu compañero?</label>
+                        <select class="caracter" id="caracteristicas" name="caracteristicas"></select>
+                    </div>
+                    <button type="submit">Aplicar Filtro</button>
+                </form>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nro</th>
+                        <th>Apellidos y Nombres</th>
+                        <th>Habilidades</th>
+                        <th>Características</th>
+                        <th>Comunicate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos serán añadidos dinámicamente aquí -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <footer></footer>
+</body>
+</html>
