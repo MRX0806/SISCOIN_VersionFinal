@@ -146,10 +146,24 @@ nav {
 }
 
 /*Style para Mensajeria*/
+section{
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    margin: 0;
+}
+
 .container-fluid {
-    width: 96%;
+    margin: auto;
+    margin-top: 18px;
+    width: 60%;
+    height: 100vh;
+    background: #fff;
     padding: 20px;
-    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .row {
@@ -164,7 +178,7 @@ nav {
 
 .col-9 {
     flex: 0 0 75%;
-    max-width: 75%;
+    max-width: 70%;
     padding: 15px;
 }
 

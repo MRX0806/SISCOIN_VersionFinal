@@ -30,6 +30,11 @@ document.addEventListener("DOMContentLoaded", function() {
             cerrarSesion();
         }
     });
+    document.addEventListener("click", function(event) {
+        if (event.target && event.target.id === 'changePassword') {
+            window.location.href = "../Login/cambiarContraseña.html"; // Redirige a la página de cambio de contraseña
+        }
+    });
 });
 
 function verificarSesion() {

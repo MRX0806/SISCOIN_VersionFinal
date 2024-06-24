@@ -148,12 +148,12 @@ nav {
 
 /*Styles Foro*/
 main {
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #ffffff;
-    margin: 0;
-    padding-top: 20px;
+    margin-top: 2%;
 }
 
 a {
@@ -187,6 +187,7 @@ button:hover {
 }
 
 .container {
+    height: 100vh;
     width: 100vh;
     background: #fff;
     padding: 20px;

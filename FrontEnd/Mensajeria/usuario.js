@@ -13,21 +13,29 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
+
     document.addEventListener("click", function(event) {
-        const userImage = document.getElementById('iconoNav');
-        const dropdownMenu = document.getElementById('dropdownNav');
+        const iconoNav = document.getElementById('iconoNav');
+        const dropdownNav = document.getElementById('dropdownNav');
         
-        if (userImage && event.target === userImage) {
-            dropdownMenu.classList.toggle('showNav');
+        if (iconoNav && event.target === iconoNav) {
+            dropdownNav.classList.toggle('showNav');
         } else {
-            if (dropdownMenu.classList.contains('showNav')) {
-                dropdownMenu.classList.remove('showNav');
+            if (dropdownNav.classList.contains('showNav')) {
+                dropdownNav.classList.remove('showNav');
             }
         }
     });
+
     document.addEventListener("click", function(event) {
         if (event.target && event.target.id === 'logout') {
             cerrarSesion();
+        }
+    });
+
+    document.addEventListener("click", function(event) {
+        if (event.target && event.target.id === 'changePassword') {
+            window.location.href = "../Login/cambiarContraseña.html"; // Redirige a la página de cambio de contraseña
         }
     });
 });
@@ -44,11 +52,11 @@ function verificarSesion() {
                 <a href="#" id="logout">Cerrar Sesión</a>
             </div>
         `;
-        //cargarPerfil(iduser); // Pasa el user_id obtenido a la función cargarPerfil
     } else {
         document.getElementById('usuario').innerHTML = `<h3>No has iniciado sesión</h3>`;
     }
 }
+
 function cerrarSesion() {
     fetch('http://localhost:8080/api/logout', {
         method: 'POST',
@@ -71,3 +79,4 @@ function cerrarSesion() {
     })
     .catch(error => console.error('Error al cerrar sesión:', error));
 }
+

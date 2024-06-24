@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class PasswordController extends Controller
 {
@@ -25,7 +26,7 @@ class PasswordController extends Controller
                 // El usuario existe, proceder a actualizar la contraseña
                 DB::table('Usuarios')
                     ->where('User', $username)
-                    ->update(['Password' => $new_password]);
+                    ->update(['Password' => $new_password]); // Actualiza la contraseña directamente
 
                 return response()->json([
                     'status' => 'success',
@@ -45,4 +46,5 @@ class PasswordController extends Controller
             ], 500);
         }
     }
+
 }

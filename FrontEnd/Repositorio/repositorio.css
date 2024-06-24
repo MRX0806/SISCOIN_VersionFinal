@@ -146,10 +146,23 @@ nav {
 }
 
 /* Styles para Repositorio */
+section{
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    margin: 0;
+}
 .container {
-    width: 90%;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 18px;
+    width: 60%;
+    height: 100vh;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-bar {
