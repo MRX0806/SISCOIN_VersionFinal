@@ -14,6 +14,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
     document.addEventListener("click", function(event) {
+        const userImage = document.getElementById('iconoNav');
+        const dropdownMenu = document.getElementById('dropdownNav');
+        
+        if (userImage && event.target === userImage) {
+            dropdownMenu.classList.toggle('showNav');
+        } else {
+            if (dropdownMenu.classList.contains('showNav')) {
+                dropdownMenu.classList.remove('showNav');
+            }
+        }
+    });
+    document.addEventListener("click", function(event) {
         if (event.target && event.target.id === 'logout') {
             cerrarSesion();
         }

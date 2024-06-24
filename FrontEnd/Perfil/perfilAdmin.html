@@ -6,7 +6,7 @@
         <title>Perfil</title>
         <link rel="stylesheet" href="perfil.css">
         <script defer src="editar.js"></script>
-        <script defer src="usuario.js"></script>
+        <script defer src="usuarioAdmin.js"></script>
     </head>
     <body>
         <header>
@@ -15,22 +15,22 @@
                     <h1>SISCOIN</h1> 
                     <h3>Sistema Colaborativo para la Investigación</h3>
                 </div>
-                <div class="usuario" id="usuario">
-                    <div id="dropdownMenu" class="dropdown-content"></div>
-                </div>
             </div>
         </header>
         <nav>
-            <ul>
-                <li><a href="../Perfil/perfil.html">PERFIL</a></li>
-                <li><a href="../Foro/foro.html">FORO</a></li>
-                <li><a href="../Repositorio/repositorio.html">REPOSITORIO</a></li>
-                <li><a href="../Filtrado/filtrado.html">MATCH</a></li>
-                <li><a href="../Mensajeria/mensajeria.html">MENSAJERIA</a></li>
-                <li><a href="">REPORTE</a></li>
-                <li><a href="fpdf/listado.php"target="_blank">>LISTADO</a></li>
-                <li><a href="fpdf/index.php"target="_blank">GENERAR PDF</a></li>
-            </ul>
+            <img src="../img/3Lineas.png" alt="" class="icono" id="iconoNav">
+            <div class="dropdown-Nav" id="dropdownNav">
+                <a href="../Perfil/perfilAdmin.html">PERFIL</a>
+                <a href="../Foro/foroAdmin.html">FORO</a>
+                <a href="../Repositorio/repositorio.html">REPOSITORIO</a>
+                <a href="../Filtrado/filtradoAdmin.html">MATCH</a>
+                <a href="../Mensajeria/mensajeriaAdmin.html">MENSAJERIA</a>
+                <a href="../Reporte/reporte.html">REPORTE</a>
+                <a href="fpdf/index.php" target="_blank">GENERAR PDF</a>
+            </div>
+            <div class="usuario" id="usuario">
+                <div id="dropdownMenu" class="dropdown-content"></div>
+            </div>
         </nav>
         <main>
             <div class="container">

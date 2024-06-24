@@ -65,10 +65,11 @@
                 <div class="five">
                     <h3>Grupos</h3>
                     <img src="../../img/log3.png" alt="log3"> 
-                <?php
+                
+                /*<?php
                     include 'grupo.php';
                 ?>
-                </div>
+                </div>*/
                 
             </div>
        <!-- estesi -->
