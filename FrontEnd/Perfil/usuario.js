@@ -37,14 +37,14 @@ function verificarSesion() {
     const iduser = localStorage.getItem('user_id');
     if (nombreUsuario && iduser) {
         document.getElementById('usuario').innerHTML = `
-            <h3>Bienvenido ${nombreUsuario}</h3>
-            <img src="../img/Usuario_blanco.png" alt="Usuario" id="userImage">
+            <h3 class="bienvenido">Bienvenido ${nombreUsuario}</h3>
+            <img src="../img/Usuario_negro.png" alt="Usuario" id="userImage">
             <div id="dropdownMenu" class="dropdown-content">
                 <a href="#" id="changePassword">Cambiar Contraseña</a>
                 <a href="#" id="logout">Cerrar Sesión</a>
             </div>
         `;
-        cargarPerfil(iduser); // Pasa el user_id obtenido a la función cargarPerfil
+        //cargarPerfil(iduser); // Pasa el user_id obtenido a la función cargarPerfil
     } else {
         document.getElementById('usuario').innerHTML = `<h3>No has iniciado sesión</h3>`;
     }
