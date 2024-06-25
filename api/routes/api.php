@@ -26,7 +26,9 @@ Route::options('{any}', function () {
 })->where('any', '.*');
 
 
-Route::post('/register', [RegisterController::class, 'register']);
+
+Route::post('register', [RegisterController::class, 'register']);
+
 
 
 Route::post('/enviar-codigo', [RecuperarController::class, 'enviarCodigo'])->name('enviar.codigo');

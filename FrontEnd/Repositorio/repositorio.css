@@ -108,12 +108,6 @@ nav {
     margin-left: 4%;
 }
 
-.usuario img {
-    width: 40px;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
 /*Style de ventana emergente para el icono de usuario*/
 .dropdown-content {
     display: none;
@@ -140,11 +134,18 @@ nav {
 
 .show {
     display: block;
-    margin-top: 10%;
+    margin-top: 3.1%;
     z-index: 1;
     border-radius: 5px;
 }
-
+.user{
+    display: flex;
+    align-self: center;
+    width: auto;
+    height: 45px;
+    margin-left: 10px;
+    cursor: pointer;
+}
 /* Styles para Repositorio */
 section{
     font-family: Arial, sans-serif;

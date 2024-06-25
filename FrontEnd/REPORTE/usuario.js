@@ -42,11 +42,6 @@ function verificarSesion() {
     if (nombreUsuario) {
         document.getElementById('usuario').innerHTML = `
             <h3 class="bienvenido">Bienvenido ${nombreUsuario}</h3>
-            <img src="../img/Usuario_negro.png" alt="Usuario" id="userImage">
-            <div id="dropdownMenu" class="dropdown-content">
-                <a href="#" id="changePassword">Cambiar Contraseña</a>
-                <a href="#" id="logout">Cerrar Sesión</a>
-            </div>
         `;
     } else {
         document.getElementById('usuario').innerHTML = `<h3>No has iniciado sesión</h3>`;
