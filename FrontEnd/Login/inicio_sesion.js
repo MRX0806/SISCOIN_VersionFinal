@@ -29,3 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error al iniciar sesión:', error));
     });
 });
+/* aqui dejo el tema de registrarse
+<div class="register-link">
+    <p>No tienes una cuenta?</p>
+    <a href="registrar.html">Registrarse</a>
+</div>
+*/
