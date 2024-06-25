@@ -20,9 +20,6 @@
                         <i class='bx bxs-user'></i>
                     </div>
                     <button type="submit" class="btn">Solicitar Código de Recuperación</button>
-                    <div class="register-link">
-                        <a href="Login.php">Volver a la Pestaña Login</a>
-                    </div>
                 </form>
                 <!-- Formulario para validar el código de recuperación -->
                 <form action="Validar_Codigo.php" method="post">
@@ -31,6 +28,9 @@
                         <i class='bx bxs-lock'></i>
                     </div>
                     <button type="submit" class="btn">Validar Código</button>
+                    <div class="register-link">
+                        <a href="Login.php">Volver a la Pestaña Login</a>
+                    </div>
                 </form>
             </div>
         </div>

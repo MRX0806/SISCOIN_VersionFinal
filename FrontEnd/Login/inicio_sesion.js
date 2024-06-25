@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Inicio de sesión exitoso');
                 localStorage.setItem('nombre_usuario', data.nombre_usuario);
                 localStorage.setItem('user_id', data.user_id);
-                window.location.href = "../Perfil/perfilAdmin.html";
+                window.location.href = "../Perfil/perfil.html";
             } else {
                 alert('Error al iniciar sesión: ' + data.message);
+                window.location.href = "inicio_sesion.html";
             }
         })
         .catch(error => console.error('Error al iniciar sesión:', error));
     });
-   
 });

@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class RegisterController extends Controller
+class AuthController extends Controller
 {
     public function register(Request $request)
     {
         $request->validate([
             'Nombre_Completo' => 'required|string|max:255',
-            'Correo' => 'required|email|max:255|unique:Usuarios,Email',
+            'Correo' => 'required|string|email|max:255|unique:Usuarios,Email',
             'username' => 'required|string|max:50|unique:Usuarios,User',
             'password' => 'required|string|min:8',
         ]);
@@ -22,7 +22,9 @@ class RegisterController extends Controller
                 'Name_Complete' => $request->input('Nombre_Completo'),
                 'Email' => $request->input('Correo'),
                 'User' => $request->input('username'),
-                'Password' => Hash::make($request->input('password')), // Hash de la contraseña
+                'Password' => Hash::make($request->input('password')), // Asegúrate de hashear la contraseña
+                'created_at' => now(),
+                'updated_at' => now()
             ]);
 
             return response()->json([

@@ -3,29 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperar Acceso</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Verificar Código</title>
+    <link rel="stylesheet" href="loginRecuperar.css">
 </head>
 <body>
     <div class="contenedor">
         <div class="imagen"></div>
         <div class="formulario-container">
             <div class="formulario">
-                <form id="recuperar-form">
+                <form action="Recuperar_Pass.php" method="post">
                     <h1>Recuperar Acceso</h1>
                     <div class="input-box">
                         <input type="text" name="email" placeholder="Ingrese su Correo Electrónico Registrado" required>
                         <i class='bx bxs-user'></i>
                     </div>
                     <button type="submit" class="btn">Solicitar Código de Recuperación</button>
+                </form>
+                <!-- Formulario para validar el código de recuperación -->
+                <form action="Validar_Codigo.php" method="post">
+                    <div class="input-box">
+                        <input type="text" name="codigo" placeholder="Ingrese el Código de Recuperación" required>
+                        <i class='bx bxs-lock'></i>
+                    </div>
+                    <button type="submit" class="btn">Validar Código</button>
                     <div class="register-link">
-                        <a href="inicio_sesion.html">Regresar</a>
+                        <a href="inicio_sesion.html">Volver a la Pestaña Login</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <script src="login.js"></script>
+    <script src="recuperarContraseña.js"></script>
 </body>
 </html>

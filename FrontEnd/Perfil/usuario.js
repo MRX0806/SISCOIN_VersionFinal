@@ -49,7 +49,7 @@ function verificarSesion() {
                 <a href="#" id="logout">Cerrar Sesión</a>
             </div>
         `;
-        //cargarPerfil(iduser); // Pasa el user_id obtenido a la función cargarPerfil
+        cargarPerfil(iduser); // Pasa el user_id obtenido a la función cargarPerfil
     } else {
         document.getElementById('usuario').innerHTML = `<h3>No has iniciado sesión</h3>`;
     }
@@ -60,29 +60,20 @@ function cargarPerfil(iduser) {
         method: 'GET',
         credentials: 'include' // Para enviar cookies
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-        if (data.error) {
-            console.error(data.error);
-        } else {
+        if (data) {
             document.getElementById('nombre').value = data.nombre;
             document.getElementById('apellido').value = data.apellido;
             document.getElementById('ciclo').value = data.ciclo;
             document.getElementById('carrera').value = data.carrera;
-            document.getElementById('habilidades').value = data.habilidades.join(', ');
-            document.getElementById('caracteristicas').value = data.caracteristicas.join(', ');
+            document.getElementById('habilidades').value = data.habilidades;
+            document.getElementById('caracteristicas').value = data.caracteristicas;
         }
     })
-    .catch(error => {
-        console.error('Error fetching perfil:', error);
-        alert('Error fetching perfil: ' + error.message);
-    });
+    .catch(error => console.error('Error fetching perfil:', error));
 }
+
 function cerrarSesion() {
     fetch('http://localhost:8080/api/logout', {
         method: 'POST',
