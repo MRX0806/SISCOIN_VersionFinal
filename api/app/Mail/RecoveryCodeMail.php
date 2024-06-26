@@ -2,21 +2,25 @@
 
 namespace App\Mail;
 
+use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
 
 class RecoveryCodeMail extends Mailable
 {
-    public $codigoRecuperacion;
+    use Queueable, SerializesModels;
 
-    public function __construct($codigoRecuperacion)
+    public $code;
+
+    public function __construct($code)
     {
-        $this->codigoRecuperacion = $codigoRecuperacion;
+        $this->code = $code;
     }
 
     public function build()
     {
-        return $this->view('emails.recovery_code')
-                    ->subject('Código de Seguridad')
-                    ->with(['codigoRecuperacion' => $this->codigoRecuperacion]);
+        return $this->view('emails.recoveryCode')
+                    ->subject('Código de Recuperación')
+                    ->with(['code' => $this->code]);
     }
 }

@@ -27,22 +27,20 @@ Route::options('{any}', function () {
 
 
 
-Route::post('register', [RegisterController::class, 'register']);
-
-
-
-Route::post('/enviar-codigo', [RecuperarController::class, 'enviarCodigo'])->name('enviar.codigo');
-Route::post('/verificar-codigo', [RecuperarController::class, 'verificarCodigo'])->name('verificar.codigo');
-
-
+/*LOGIN*/
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/verificar-sesion', [AuthController::class, 'verificarSesion']);
 Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('register', [RegisterController::class, 'register']);
+
+Route::post('/api/solicitar-recuperacion', [RecuperarController::class, 'solicitarRecuperacion']);
+Route::post('/api/verificar-codigo', [RecuperarController::class, 'verificarCodigo']);
+Route::post('/api/cambiar-contraseña', [RecuperarController::class, 'cambiarContraseña']);
 
 
-// Asegúrate de que esta línea esté en tu archivo routes/api.php
+/*PERFIL*/
 Route::get('/perfil/{id}', [PerfilController::class, 'show']);
-
+Route::get('/perfiles', [PerfilController::class, 'showAll']);
 
 // Ruta para recuperar contraseña
 Route::post('password/reset', [PasswordController::class, 'reset']);
