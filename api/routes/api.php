@@ -33,9 +33,9 @@ Route::get('/verificar-sesion', [AuthController::class, 'verificarSesion']);
 Route::post('/logout', [AuthController::class, 'logout']);
 Route::post('register', [RegisterController::class, 'register']);
 
-Route::post('/api/solicitar-recuperacion', [RecuperarController::class, 'solicitarRecuperacion']);
-Route::post('/api/verificar-codigo', [RecuperarController::class, 'verificarCodigo']);
-Route::post('/api/cambiar-contraseña', [RecuperarController::class, 'cambiarContraseña']);
+Route::post('/solicitar-recuperacion', [RecuperarController::class, 'solicitarRecuperacion']);
+Route::post('/verificar-codigo', [RecuperarController::class, 'verificarCodigo']);
+Route::post('/cambiar-contraseña', [RecuperarController::class, 'cambiarContraseña']);
 
 
 /*PERFIL*/

@@ -11,15 +11,21 @@ class RecuperarController extends Controller
 {
     public function solicitarRecuperacion(Request $request)
     {
-        $request->validate(['email' => 'required|email']);
+        Log::info('Entrando en el método solicitarRecuperacion');
+        $data = $request->all();
+        Log::info('Datos de la solicitud: ', $data);
 
-        $code = rand(100000, 999999); // Genera un código de 6 dígitos
+        $codigoRecuperacion = rand(100000, 999999);
+        Log::info('Código de recuperación generado: ' . $codigoRecuperacion);
 
-        // Lógica para guardar el código en la base de datos con el email correspondiente (no mostrada aquí)
-
-        Mail::to($request->email)->send(new RecoveryCodeMail($code));
-
-        return response()->json(['message' => 'Correo de recuperación enviado.'], 200);
+        try {
+            Mail::to($request->email)->send(new RecoveryCodeMail($codigoRecuperacion));
+            Log::info('Correo de recuperación enviado a: ' . $request->email);
+            return response()->json(['status' => 'success', 'message' => 'Código de recuperación enviado al correo.']);
+        } catch (\Exception $e) {
+            Log::error('Error al enviar el correo de recuperación: ' . $e->getMessage());
+            return response()->json(['status' => 'error', 'message' => 'No se pudo enviar el correo de recuperación.']);
+        }
     }
 
     public function verificarCodigo(Request $request)

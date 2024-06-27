@@ -4,7 +4,7 @@
     <title>Código de Recuperación</title>
 </head>
 <body>
-    <h1>Código de Recuperación</h1>
-    <p>Tu código de recuperación es: <strong>{{ $codigo }}</strong></p>
+    <h1>Su código de recuperación es: {{ $codigoRecuperacion }}</h1>
+    <p>Use este código para recuperar su contraseña.</p>
 </body>
 </html>

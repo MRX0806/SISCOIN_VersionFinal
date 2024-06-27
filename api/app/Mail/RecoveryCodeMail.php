@@ -10,17 +10,26 @@ class RecoveryCodeMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $code;
+    public $codigoRecuperacion;
 
-    public function __construct($code)
+    /**
+     * Create a new message instance.
+     *
+     * @return void
+     */
+    public function __construct($codigoRecuperacion)
     {
-        $this->code = $code;
+        $this->codigoRecuperacion = $codigoRecuperacion;
     }
 
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
     public function build()
     {
         return $this->view('emails.recoveryCode')
-                    ->subject('Código de Recuperación')
-                    ->with(['code' => $this->code]);
+                    ->with('codigoRecuperacion', $this->codigoRecuperacion);
     }
 }
