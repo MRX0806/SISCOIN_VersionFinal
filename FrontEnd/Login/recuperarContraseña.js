@@ -1,42 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const solicitarRecuperacionForm = document.getElementById('solicitar-recuperacion-form');
-    solicitarRecuperacionForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const email = document.getElementById('email').value;
-
-    fetch('http://localhost:8080/api/solicitar-recuperacion', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'success') {
-            alert('Código de recuperación enviado al correo.');
-            window.location.href = 'verificarCodigo.html';
-        } else {
-            alert('Error: ' + data.message);
-        }
-    })
-    .catch(error => console.error('Error:', error));
-    });
-});
-
-
-
-
-
-
-
-
-
-/*
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const solicitarRecuperacionForm = document.getElementById('solicitar-recuperacion-form');
     const verificarCodigoForm = document.getElementById('verificar-codigo-form');
     const cambiarContraseñaForm = document.getElementById('cambiar-contraseña-form');
 
@@ -80,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 if (data.status === 'success') {
-                    alert('Código verificado. Procede a cambiar tu contraseña.');
+                    alert('Código verificado correctamente.');
                     window.location.href = 'cambiarContraseña.html';
                 } else {
                     alert('Error: ' + data.message);
@@ -93,20 +56,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cambiarContraseñaForm) {
         cambiarContraseñaForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            const newPassword = document.getElementById('newPassword').value;
+            const nuevaContraseña = document.getElementById('nueva_contraseña').value;
 
             fetch('http://localhost:8080/api/cambiar-contraseña', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ newPassword }),
+                body: JSON.stringify({ nueva_contraseña: nuevaContraseña }),
             })
             .then(response => response.json())
             .then(data => {
                 if (data.status === 'success') {
-                    alert('Contraseña cambiada exitosamente.');
-                    window.location.href = 'login.html';
+                    alert('Contraseña cambiada correctamente.');
+                    window.location.href = 'inicioSesion.html';
                 } else {
                     alert('Error: ' + data.message);
                 }
@@ -115,4 +78,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-*/

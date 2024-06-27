@@ -11,22 +11,30 @@ class RecuperarController extends Controller
 {
     public function solicitarRecuperacion(Request $request)
     {
-        Log::info('Entrando en el método solicitarRecuperacion');
-        $data = $request->all();
-        Log::info('Datos de la solicitud: ', $data);
+
+        \Log::info('Entrando en el método solicitarRecuperacion');
+        \Log::info('Datos de la solicitud: ', $request->all());
+
+        $request->validate([
+            'email' => 'required|email|exists:usuarios,email',
+        ]);
 
         $codigoRecuperacion = rand(100000, 999999);
-        Log::info('Código de recuperación generado: ' . $codigoRecuperacion);
+        $email = $request->input('email');
+
+        \Log::info('Código de recuperación generado: ' . $codigoRecuperacion);
+        \Log::info('Email del usuario: ' . $email);
 
         try {
-            Mail::to($request->email)->send(new RecoveryCodeMail($codigoRecuperacion));
-            Log::info('Correo de recuperación enviado a: ' . $request->email);
+            Mail::to($email)->send(new RecoveryCodeMail($codigoRecuperacion));
+            \Log::info('Correo de recuperación enviado.');
             return response()->json(['status' => 'success', 'message' => 'Código de recuperación enviado al correo.']);
         } catch (\Exception $e) {
-            Log::error('Error al enviar el correo de recuperación: ' . $e->getMessage());
-            return response()->json(['status' => 'error', 'message' => 'No se pudo enviar el correo de recuperación.']);
+            \Log::error('Error al enviar el correo de recuperación: ' . $e->getMessage());
+            return response()->json(['status' => 'error', 'message' => 'No se pudo enviar el correo de recuperación.'], 500);
         }
     }
+
 
     public function verificarCodigo(Request $request)
     {
