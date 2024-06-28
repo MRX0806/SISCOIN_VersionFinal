@@ -57,15 +57,17 @@
                     </div>
                     <span>Editar foto</span>
                 </div>
-                <div class="files">
+                <form class="files" action="subirFile.php" method="POST">
                     <h2>Archivos subidos</h2>
-                    <div class="file">Archivo 1</div>
-                    <div class="file">Archivo 2</div>
-                    <div class="buttons">
-                        <button class="view">Ver</button>
-                        <button class="delete">Eliminar</button>
+                    <div class="col-12">
+                        <label for="archivo">Sube tu archivo</label>
+                        <input type="file" name="archivo" id="archivo" >
                     </div>
-                </div>
+                    <div class="buttons">
+                        <button type="submit" class="btn btn-primary">Subir</button>
+                        <button class="delete">Cancelar</button>
+                    </div>
+                </form>
             </div>
         </main>
     </body>
