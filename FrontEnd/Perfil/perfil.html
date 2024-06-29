@@ -57,18 +57,29 @@
                     </div>
                     <span>Editar foto</span>
                 </div>
-                <form class="files" action="subirFile.php" method="POST">
+                <form action="../Perfil/subirFile.php" method="POST" enctype="multipart/form-data" class="files">
                     <h2>Archivos subidos</h2>
-                    <div class="col-12">
-                        <label for="archivo">Sube tu archivo</label>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sube">
+                        <label class="subearchivo" for="archivo">Sube tu archivo:</label>
                         <input type="file" name="archivo" id="archivo" >
                     </div>
+                    
                     <div class="buttons">
-                        <button type="submit" class="btn btn-primary">Subir</button>
-                        <button class="delete">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" name="registrar">Subir</button>
                     </div>
                 </form>
             </div>
         </main>
+        
     </body>
 </html>

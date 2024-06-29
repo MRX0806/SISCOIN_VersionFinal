@@ -232,6 +232,15 @@ label{
     border-radius: 25%;
     margin-bottom: 10px;
 }
+
+.sube{
+    margin-bottom: 5px;
+}
+
+.subearchivo{
+    margin-bottom: 123px;    
+}
+
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;

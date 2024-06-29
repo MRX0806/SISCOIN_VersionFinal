@@ -1,31 +1,49 @@
 <?php
  if (isset($_FILES['archivo'])) {
-   extract($_POST);
-   $nombre = $_POST['nombre'];
+    // Extraer variables del formulario
+    extract($_POST);
+    $nombre = $_POST['nombre'];
 
-   $destino = "docs/";
+    // Definir el destino del archivo
+    $destino = "files/";
 
-   $nombre_archivo = basename($_FILES['archivo']['name']);
-   $ext = strtolower(pathinfo($nombre_archivo, PATHINFO_EXTENSION));
+    // Obtener el nombre y la extensión del archivo
+    $nombre_archivo = basename($_FILES["archivo"]["name"]);
+    $extension = strtolower(pathinfo($nombre_archivo, PATHINFO_EXTENSION));
 
-   if ($ext == "pdf" || $ext == "doc" || $ext == "docx") {
-       if (move_uploaded_file($_FILES['archivo']['tmp_name'], $destino . $nombre_archivo)) {
-           include "conexion.php"; 
-           try {
-               $conexion = new PDO($dsn, $username, $password, $options);
-
-               $consulta = "INSERT INTO archivos (nombre, extension) VALUES (:nombre, :extension)";
-               $stmt = $conexion->prepare($consulta);
-
-               $stmt->bindParam(':nombre', $nombre);
-               $stmt->bindParam(':extension', $ext);
-
-               $stmt->execute();
-           } catch (PDOException $e) {
-               echo "Error: " . $e->getMessage();
-           }
-       }
-   }
+    // Verificar la extensión del archivo
+    if ($extension == "pdf" || $extension == "doc" || $extension == "docx") {
+        // Mover el archivo al destino
+        if (move_uploaded_file($_FILES["archivo"]["tmp_name"], $destino . $nombre_archivo)) {
+            // Incluir archivo de conexión
+            include "conexion.php"; 
+            try {
+                // Preparar la consulta
+                $consulta = "INSERT INTO archivo (nombre, archivo) VALUES (:nombre, :archivo)";
+                $stmt = $conn->prepare($consulta);
+                // Enlazar los parámetros
+                $stmt->bindParam(':nombre', $nombre);
+                $stmt->bindParam(':archivo', $nombre_archivo);
+                // Ejecutar la consulta
+                $stmt->execute();
+                echo "<script lenguage='JavaScript'>alert('Archivo subido correctamente.');
+                location.assign('../Perfil/perfil.html');</script>";
+            } catch (PDOException $e) {
+                echo "<script lenguage='JavaScript'>alert('Error');
+                location.assign('../Perfil/perfil.html');</script>" . $e->getMessage();
+            }
+        } else {
+            echo "<script lenguage='JavaScript'>alert('Error');
+                location.assign('../Perfil/perfil.html');</script>";
+        }
+    } else {
+        echo "<script lenguage='JavaScript'>alert('Error');
+                location.assign('../Perfil/perfil.html');</script>";
+    }
+} else {
+    echo "<script lenguage='JavaScript'>alert('Error');
+                location.assign('../Perfil/perfil.html');</script>";
 }
+
 
 ?>
